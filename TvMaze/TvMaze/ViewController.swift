@@ -12,15 +12,5 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        testGetAllShows()
-    }
-    
-    private func testGetAllShows() {
-        let showsRepository = ShowsRepository()
-        showsRepository.search(name: "girls").done({ shows in
-            print(shows.compactMap({ $0.name }))
-        }).catch({ error in
-            print(error)
-        })
     }
 }

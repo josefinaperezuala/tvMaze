@@ -11,6 +11,7 @@ import SwiftyJSON
 
 protocol ShowsRepositoryProtocol {
     func getAll() -> Promise<[Show]>
+    func getShows(page: String) -> Promise<[Show]>
     func search(name: String) -> Promise<[Show]>
 }
 
@@ -19,16 +20,11 @@ class ShowsRepository: ShowsRepositoryProtocol {
     let apiManager = APIManager()
     
     func getAll() -> Promise<[Show]> {
-        
-        return Promise<[Show]> { seal in
-            apiManager.request(path: "shows", method: .get).done { json in
-                
-                let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0) }
-                seal.fulfill(shows)
-                }.catch { error in
-                    seal.reject(error)
-            }
-        }
+        return getShowsPages()
+    }
+    
+    func getShows(page: String) -> Promise<[Show]> {
+        return getShowsPages(page: page)
     }
     
     func search(name: String) -> Promise<[Show]> {
@@ -38,6 +34,20 @@ class ShowsRepository: ShowsRepositoryProtocol {
                 
                 let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0["show"]) }
                 seal.fulfill(shows)
+                }.catch { error in
+                    seal.reject(error)
+            }
+        }
+    }
+    
+    private func getShowsPages(page: String? = nil) -> Promise<[Show]> {
+        
+        return Promise<[Show]> { seal in
+            apiManager.request(path: "shows\(page == nil ? "" : "?page=\(page ?? "0")")",
+                method: .get).done { json in
+                    
+                    let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0) }
+                    seal.fulfill(shows)
                 }.catch { error in
                     seal.reject(error)
             }
