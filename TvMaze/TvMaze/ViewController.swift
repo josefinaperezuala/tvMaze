@@ -12,9 +12,15 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        testGetAllShows()
     }
-
-
+    
+    private func testGetAllShows() {
+        let showsRepository = ShowsRepository()
+        showsRepository.getAll().done({ shows in
+            print(shows.compactMap({ $0.name }))
+        }).catch({ error in
+            print(error)
+        })
+    }
 }
-
