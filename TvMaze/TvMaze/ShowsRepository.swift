@@ -10,7 +10,7 @@ import PromiseKit
 import SwiftyJSON
 
 protocol ShowsRepositoryProtocol {
-    func getAll() -> Promise<[Show]>
+    func getShows() -> Promise<[Show]>
     func getShows(page: String) -> Promise<[Show]>
     func search(name: String) -> Promise<[Show]>
 }
@@ -19,7 +19,7 @@ class ShowsRepository: ShowsRepositoryProtocol {
     
     let apiManager = APIManager()
     
-    func getAll() -> Promise<[Show]> {
+    func getShows() -> Promise<[Show]> {
         return getShowsPages()
     }
     
