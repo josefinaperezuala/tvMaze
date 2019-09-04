@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     
     private func testGetAllShows() {
         let showsRepository = ShowsRepository()
-        showsRepository.getAll().done({ shows in
+        showsRepository.search(name: "girls").done({ shows in
             print(shows.compactMap({ $0.name }))
         }).catch({ error in
             print(error)
