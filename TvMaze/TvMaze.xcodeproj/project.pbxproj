@@ -24,6 +24,7 @@
 		D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB0972320448400724331 /* ExternalsMapper.swift */; };
 		D9DCB09A232044EF00724331 /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB099232044EF00724331 /* ImageMapper.swift */; };
 		D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB09B2320454800724331 /* LinksMapper.swift */; };
+		D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB09D2320483000724331 /* WebChannelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D9DCB0972320448400724331 /* ExternalsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalsMapper.swift; sourceTree = "<group>"; };
 		D9DCB099232044EF00724331 /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
 		D9DCB09B2320454800724331 /* LinksMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksMapper.swift; sourceTree = "<group>"; };
+		D9DCB09D2320483000724331 /* WebChannelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebChannelMapper.swift; sourceTree = "<group>"; };
 		F5BF11F5699CF5AF66CC4924 /* libPods-TvMaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				D9DCB0972320448400724331 /* ExternalsMapper.swift */,
 				D9DCB099232044EF00724331 /* ImageMapper.swift */,
 				D9DCB09B2320454800724331 /* LinksMapper.swift */,
+				D9DCB09D2320483000724331 /* WebChannelMapper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				D9DCB0962320441000724331 /* NetworkMapper.swift in Sources */,
 				D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */,
 				D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */,
+				D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */,
 				D9DCB08E2320341400724331 /* ShowMapper.swift in Sources */,
 				D9DCB088232015D900724331 /* Show.swift in Sources */,
 				D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */,

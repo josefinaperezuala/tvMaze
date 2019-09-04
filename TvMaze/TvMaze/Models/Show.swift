@@ -19,6 +19,13 @@ struct Rating {
     let average: Float
 }
 
+struct Country {
+    
+    let name: String
+    let code: String
+    let timezone: String
+}
+
 struct Network {
     
     let id: Int
@@ -26,11 +33,11 @@ struct Network {
     let country: Country
 }
 
-struct Country {
+struct WebChannel {
     
+    let id: Int
     let name: String
-    let code: String
-    let timezone: String
+    let country: Country
 }
 
 struct Externals {
@@ -68,7 +75,7 @@ class Show {
     let rating: Rating
     let weight: Int
     let network: Network
-    let webChannel: String?
+    let webChannel: WebChannel?
     let externals: Externals
     let image: Image
     let summary: String
@@ -90,7 +97,7 @@ class Show {
         rating: Rating,
         weight: Int,
         network: Network,
-        webChannel: String?,
+        webChannel: WebChannel,
         externals: Externals,
         image: Image,
         summary: String,

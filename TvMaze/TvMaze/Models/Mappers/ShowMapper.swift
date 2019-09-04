@@ -26,7 +26,7 @@ class ShowMapper {
              rating: RatingMapper.map(from: json["rating"]),
              weight: json["weight"].intValue,
              network: NetworkMapper.map(from: json["network"]),
-             webChannel: json["webChannel"].string,
+             webChannel: WebChannelMapper.map(from: json["webChannel"]),
              externals: ExternalsMapper.map(from: json["externals"]),
              image: ImageMapper.map(from: json["image"]),
              summary: json["summary"].stringValue,
