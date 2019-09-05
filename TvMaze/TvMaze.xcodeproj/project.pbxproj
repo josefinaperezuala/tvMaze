@@ -19,6 +19,8 @@
 		D99DDD25232156AB005F049D /* TvMazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD24232156AB005F049D /* TvMazeTests.swift */; };
 		D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD2D23217ABF005F049D /* ShowCell.swift */; };
 		D99DDD3023217ABF005F049D /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DDD2E23217ABF005F049D /* ShowCell.xib */; };
+		D99DDD33232189EF005F049D /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD32232189EF005F049D /* UITableView.swift */; };
+		D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD3423218A61005F049D /* UITableViewCell.swift */; };
 		D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB071231FFA2B00724331 /* AppDelegate.swift */; };
 		D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB078231FFA2C00724331 /* Assets.xcassets */; };
 		D9DCB07C231FFA2C00724331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */; };
@@ -63,6 +65,8 @@
 		D99DDD26232156AB005F049D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D99DDD2D23217ABF005F049D /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
 		D99DDD2E23217ABF005F049D /* ShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
+		D99DDD32232189EF005F049D /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		D99DDD3423218A61005F049D /* UITableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewCell.swift; sourceTree = "<group>"; };
 		D9DCB06E231FFA2B00724331 /* TvMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TvMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DCB071231FFA2B00724331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9DCB078231FFA2C00724331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,6 +205,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D99DDD31232189DB005F049D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD32232189EF005F049D /* UITableView.swift */,
+				D99DDD3423218A61005F049D /* UITableViewCell.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D9DCB065231FFA2B00724331 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +237,7 @@
 		D9DCB070231FFA2B00724331 /* TvMaze */ = {
 			isa = PBXGroup;
 			children = (
+				D99DDD31232189DB005F049D /* Extensions */,
 				D99DDCF623214590005F049D /* Shows */,
 				D9DCB08B23202E9300724331 /* Models */,
 				D9DCB071231FFA2B00724331 /* AppDelegate.swift */,
@@ -408,6 +422,7 @@
 				D9DCB0962320441000724331 /* NetworkMapper.swift in Sources */,
 				D99DDCF3232136C1005F049D /* Constants.swift in Sources */,
 				D99DDD1C23214985005F049D /* ShowLIstInteractor.swift in Sources */,
+				D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */,
 				D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */,
 				D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */,
 				D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */,
@@ -417,6 +432,7 @@
 				D9DCB08E2320341400724331 /* ShowMapper.swift in Sources */,
 				D9DCB088232015D900724331 /* Show.swift in Sources */,
 				D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */,
+				D99DDD33232189EF005F049D /* UITableView.swift in Sources */,
 				D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */,
 				D9DCB0902320425300724331 /* CountryMapper.swift in Sources */,
 				D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */,

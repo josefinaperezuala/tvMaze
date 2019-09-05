@@ -16,7 +16,10 @@ class ShowCell: UITableViewCell {
     
     func configure(show: ShowPresentable) {
         nameLbl.text = show.name
-        showImg.kf.setImage(with: show.imageUrl)
+        showImg.kf.setImage(
+            with: show.imageUrl,
+            placeholder: UIImage(named: "placeholder"),
+            options: nil)
     }
     
 }

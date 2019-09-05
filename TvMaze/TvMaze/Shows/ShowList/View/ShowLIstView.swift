@@ -16,8 +16,7 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     }
     
     func setUpTable(){
-        showsTable.register(UINib(nibName: showCellIdentifier, bundle: nil),
-                            forCellReuseIdentifier: showCellIdentifier)
+        showsTable.register(ShowCell.self)
     }
     
     func show(show: [ShowPresentable]) {
@@ -28,7 +27,6 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     func show(errorMsg: String) {
         print(errorMsg)
     }
-
 }
 
 extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
