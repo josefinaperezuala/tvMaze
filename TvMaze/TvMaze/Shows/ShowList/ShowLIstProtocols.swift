@@ -8,6 +8,7 @@ protocol ShowLIstPresenterProtocol: class {
     
     func viewDidLoad()
     func didGet(shows: [Show])
+    func didFail(error: Error)
 }
 
 
@@ -24,6 +25,7 @@ protocol ShowLIstViewProtocol: class {
   var presenter: ShowLIstPresenterProtocol?  { get set }
     
     func show(show: [ShowPresentable])
+    func show(errorMsg: String)
 }
 
 

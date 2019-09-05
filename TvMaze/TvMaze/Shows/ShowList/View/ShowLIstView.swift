@@ -16,12 +16,17 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     }
     
     func setUpTable(){
-        showsTable.register(UINib(nibName: showCellIdentifier, bundle: nil), forCellReuseIdentifier: showCellIdentifier)
+        showsTable.register(UINib(nibName: showCellIdentifier, bundle: nil),
+                            forCellReuseIdentifier: showCellIdentifier)
     }
     
     func show(show: [ShowPresentable]) {
         self.shows = show
         showsTable.reloadData()
+    }
+    
+    func show(errorMsg: String) {
+        print(errorMsg)
     }
 
 }

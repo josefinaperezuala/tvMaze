@@ -14,4 +14,8 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
         let presentables = shows.map({ ShowPresentable(show: $0) })
         view?.show(show: presentables)
     }
+    
+    func didFail(error: Error) {
+        view?.show(errorMsg: error.localizedDescription)
+    }
 }

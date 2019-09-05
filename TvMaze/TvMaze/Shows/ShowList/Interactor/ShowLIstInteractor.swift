@@ -11,7 +11,7 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
         repository.getShows().done { shows in
             self.presenter?.didGet(shows: shows)
             }.catch { error in
-
+                
         }
     }
     
