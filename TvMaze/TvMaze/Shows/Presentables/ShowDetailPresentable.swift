@@ -1,5 +1,5 @@
 //
-//  ShowPresentable.swift
+//  ShowDetailPresentable.swift
 //  TvMaze
 //
 //  Created by Josefina Perez on 05/09/2019.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct ShowPresentable {
-    var id: Int
+struct ShowDetailPresentable {
     var name: String
-    var imageUrl: URL?
+    var genres: [String]
+    var imageURL: URL?
     
     init(show: Show) {
-        id = show.id
         name = show.name
-        imageUrl = URL(string: show.image.original)
+        genres = show.genres
+        imageURL = URL(string: show.image.original)
     }
 }

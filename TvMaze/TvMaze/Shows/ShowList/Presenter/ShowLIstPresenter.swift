@@ -1,7 +1,7 @@
 import UIKit
 
 class ShowLIstPresenter: ShowLIstPresenterProtocol {
-    
+
     weak var view: ShowLIstViewProtocol?
     var interactor: ShowLIstInteractorProtocol?
     var router: ShowLIstRouterProtocol?
@@ -17,5 +17,13 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     
     func didFail(error: Error) {
         view?.show(errorMsg: error.localizedDescription)
+    }
+    
+    func didSelect(showId: Int) {
+        interactor?.getShow(id: showId)
+    }
+    
+    func showDetail(show: Show) {
+        router?.showDetail(show: ShowDetailPresentable(show: show))
     }
 }

@@ -3,6 +3,7 @@ import PromiseKit
 
 class ShowLIstInteractor: ShowLIstInteractorProtocol {
     
+    
     weak var presenter: ShowLIstPresenterProtocol?
     
     var repository: ShowsRepositoryProtocol = ShowsRepository()
@@ -12,6 +13,12 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
             self.presenter?.didGet(shows: shows)
             }.catch { error in
                 
+        }
+    }
+    
+    func getShow(id: Int) {
+        repository.getShow(id: id).done { show in
+            self.presenter?.showDetail(show: show)
         }
     }
 }

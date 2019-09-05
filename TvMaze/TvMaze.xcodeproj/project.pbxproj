@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00EBDB7F0F77008B2D4AF904 /* libPods-TvMaze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99DDD3E23219C9B005F049D /* libPods-TvMaze.a */; };
 		43B76D65E54889AA17172762 /* libPods-TvMazeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F21481784AB759F6A05030E0 /* libPods-TvMazeTests.a */; };
 		D99DDCF3232136C1005F049D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDCF2232136C1005F049D /* Constants.swift */; };
 		D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD0D23214985005F049D /* ShowLIstPresenter.swift */; };
@@ -23,6 +22,14 @@
 		D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD3423218A61005F049D /* UITableViewCell.swift */; };
 		D99DDD3723218E83005F049D /* ShowPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD3623218E83005F049D /* ShowPresentable.swift */; };
 		D99DDD3D2321991E005F049D /* ShowListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD3C2321991E005F049D /* ShowListTest.swift */; };
+		D99DDD652321A28D005F049D /* ShowDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD5B2321A28D005F049D /* ShowDetailPresenter.swift */; };
+		D99DDD662321A28D005F049D /* ShowDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD5C2321A28D005F049D /* ShowDetailProtocols.swift */; };
+		D99DDD672321A28D005F049D /* ShowDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DDD5E2321A28D005F049D /* ShowDetailView.xib */; };
+		D99DDD682321A28D005F049D /* ShowDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD5F2321A28D005F049D /* ShowDetailView.swift */; };
+		D99DDD692321A28D005F049D /* ShowDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD602321A28D005F049D /* ShowDetailModule.swift */; };
+		D99DDD6A2321A28D005F049D /* ShowDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD622321A28D005F049D /* ShowDetailInteractor.swift */; };
+		D99DDD6B2321A28D005F049D /* ShowDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD642321A28D005F049D /* ShowDetailRouter.swift */; };
+		D99DDD6D2321A809005F049D /* ShowDetailPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD6C2321A809005F049D /* ShowDetailPresentable.swift */; };
 		D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB071231FFA2B00724331 /* AppDelegate.swift */; };
 		D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB078231FFA2C00724331 /* Assets.xcassets */; };
 		D9DCB07C231FFA2C00724331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */; };
@@ -72,6 +79,14 @@
 		D99DDD3623218E83005F049D /* ShowPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowPresentable.swift; sourceTree = "<group>"; };
 		D99DDD3C2321991E005F049D /* ShowListTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowListTest.swift; sourceTree = "<group>"; };
 		D99DDD3E23219C9B005F049D /* libPods-TvMaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-TvMaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99DDD5B2321A28D005F049D /* ShowDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailPresenter.swift; sourceTree = "<group>"; };
+		D99DDD5C2321A28D005F049D /* ShowDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailProtocols.swift; sourceTree = "<group>"; };
+		D99DDD5E2321A28D005F049D /* ShowDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowDetailView.xib; sourceTree = "<group>"; };
+		D99DDD5F2321A28D005F049D /* ShowDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailView.swift; sourceTree = "<group>"; };
+		D99DDD602321A28D005F049D /* ShowDetailModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailModule.swift; sourceTree = "<group>"; };
+		D99DDD622321A28D005F049D /* ShowDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailInteractor.swift; sourceTree = "<group>"; };
+		D99DDD642321A28D005F049D /* ShowDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailRouter.swift; sourceTree = "<group>"; };
+		D99DDD6C2321A809005F049D /* ShowDetailPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailPresentable.swift; sourceTree = "<group>"; };
 		D9DCB06E231FFA2B00724331 /* TvMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TvMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DCB071231FFA2B00724331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9DCB078231FFA2C00724331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,7 +123,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00EBDB7F0F77008B2D4AF904 /* libPods-TvMaze.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +153,7 @@
 		D99DDCF623214590005F049D /* Shows */ = {
 			isa = PBXGroup;
 			children = (
+				D99DDD592321A28D005F049D /* ShowDetail */,
 				D99DDD0B23214985005F049D /* ShowList */,
 				D99DDCFE23214932005F049D /* Presentables */,
 			);
@@ -149,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				D99DDD3623218E83005F049D /* ShowPresentable.swift */,
+				D99DDD6C2321A809005F049D /* ShowDetailPresentable.swift */,
 			);
 			path = Presentables;
 			sourceTree = "<group>";
@@ -241,6 +257,52 @@
 				D99DDD3C2321991E005F049D /* ShowListTest.swift */,
 			);
 			path = ShowList;
+			sourceTree = "<group>";
+		};
+		D99DDD592321A28D005F049D /* ShowDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD5A2321A28D005F049D /* Presenter */,
+				D99DDD5C2321A28D005F049D /* ShowDetailProtocols.swift */,
+				D99DDD5D2321A28D005F049D /* View */,
+				D99DDD602321A28D005F049D /* ShowDetailModule.swift */,
+				D99DDD612321A28D005F049D /* Interactor */,
+				D99DDD632321A28D005F049D /* Router */,
+			);
+			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		D99DDD5A2321A28D005F049D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD5B2321A28D005F049D /* ShowDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D99DDD5D2321A28D005F049D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD5E2321A28D005F049D /* ShowDetailView.xib */,
+				D99DDD5F2321A28D005F049D /* ShowDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D99DDD612321A28D005F049D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD622321A28D005F049D /* ShowDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D99DDD632321A28D005F049D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD642321A28D005F049D /* ShowDetailRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		D9DCB065231FFA2B00724331 = {
@@ -400,6 +462,7 @@
 				D9DCB07C231FFA2C00724331 /* LaunchScreen.storyboard in Resources */,
 				D99DDD1823214985005F049D /* ShowLIstView.xib in Resources */,
 				D99DDD3023217ABF005F049D /* ShowCell.xib in Resources */,
+				D99DDD672321A28D005F049D /* ShowDetailView.xib in Resources */,
 				D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,25 +535,32 @@
 				D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */,
 				D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */,
 				D9DCB092232042F300724331 /* ScheduleMapper.swift in Sources */,
+				D99DDD6A2321A28D005F049D /* ShowDetailInteractor.swift in Sources */,
 				D9DCB0862320039D00724331 /* APIManager.swift in Sources */,
 				D9DCB0962320441000724331 /* NetworkMapper.swift in Sources */,
 				D99DDCF3232136C1005F049D /* Constants.swift in Sources */,
+				D99DDD692321A28D005F049D /* ShowDetailModule.swift in Sources */,
 				D99DDD1C23214985005F049D /* ShowLIstInteractor.swift in Sources */,
 				D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */,
 				D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */,
 				D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */,
 				D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */,
+				D99DDD682321A28D005F049D /* ShowDetailView.swift in Sources */,
+				D99DDD662321A28D005F049D /* ShowDetailProtocols.swift in Sources */,
 				D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */,
 				D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */,
 				D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */,
 				D9DCB08E2320341400724331 /* ShowMapper.swift in Sources */,
+				D99DDD6B2321A28D005F049D /* ShowDetailRouter.swift in Sources */,
 				D9DCB088232015D900724331 /* Show.swift in Sources */,
 				D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */,
+				D99DDD652321A28D005F049D /* ShowDetailPresenter.swift in Sources */,
 				D99DDD33232189EF005F049D /* UITableView.swift in Sources */,
 				D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */,
 				D9DCB0902320425300724331 /* CountryMapper.swift in Sources */,
 				D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */,
 				D9DCB0942320437B00724331 /* RatingMapper.swift in Sources */,
+				D99DDD6D2321A809005F049D /* ShowDetailPresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -46,4 +46,8 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
         showCell.configure(show: shows[indexPath.row])
         return showCell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelect(showId: shows[indexPath.row].id)
+    }
 }

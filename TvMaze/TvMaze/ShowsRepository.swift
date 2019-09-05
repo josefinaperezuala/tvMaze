@@ -13,10 +13,11 @@ protocol ShowsRepositoryProtocol {
     func getShows() -> Promise<[Show]>
     func getShows(page: String) -> Promise<[Show]>
     func search(name: String) -> Promise<[Show]>
+    func getShow(id: Int) -> Promise<Show>
 }
 
 class ShowsRepository: ShowsRepositoryProtocol {
-    
+
     let apiManager = APIManager()
     
     func getShows() -> Promise<[Show]> {
@@ -35,6 +36,19 @@ class ShowsRepository: ShowsRepositoryProtocol {
                 let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0["show"]) }
                 seal.fulfill(shows)
                 }.catch { error in
+                    seal.reject(error)
+            }
+        }
+    }
+    
+    func getShow(id: Int) -> Promise<Show> {
+        
+        return Promise<Show> { seal in
+            apiManager.request(path: "shows/\(id)" , method: .get).done { json in
+                
+                let show = ShowMapper.map(from: json)
+                seal.fulfill(show)
+                }.catch{ error in
                     seal.reject(error)
             }
         }
