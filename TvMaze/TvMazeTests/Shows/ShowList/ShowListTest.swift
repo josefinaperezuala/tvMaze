@@ -33,13 +33,20 @@ class ShowListTest: XCTestCase {
 
     func testShowsCount() {
         //arrange
+        let expectation = XCTestExpectation(description: "")
         interactor.repository = ShowMock()
-
+        
         //act
         view.loadViewIfNeeded()
 
         //assert
-        XCTAssert(view.shows.count == 1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            expectation.fulfill()
+            XCTAssert(self.view.shows.count == 1)
+        }
+        
+        wait(for: [expectation], timeout: 5)
+        
     }
 }
 
