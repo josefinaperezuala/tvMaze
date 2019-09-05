@@ -17,8 +17,6 @@ class ShowLIstModule {
         interactor.presenter = presenter
         router.viewController = view
         
-        interactor.repository = ShowsRepository()
-        
         return UINavigationController(rootViewController: view)
     }    
 }

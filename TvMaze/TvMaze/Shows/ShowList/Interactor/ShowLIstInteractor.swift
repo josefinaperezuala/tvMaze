@@ -5,7 +5,7 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
     
     weak var presenter: ShowLIstPresenterProtocol?
     
-    var repository: ShowsRepositoryProtocol!
+    var repository: ShowsRepositoryProtocol = ShowsRepository()
     
     func getShows() {
         repository.getShows().done { shows in

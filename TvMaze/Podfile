@@ -5,5 +5,15 @@ target 'TvMaze' do
 	pod "PromiseKit", "~> 6.8"
 	pod 'Alamofire'
 	pod 'SwiftyJSON'
-	pod 'Kingfisher', '~> 5.0'	
+	pod 'Kingfisher', '~> 5.0'
+  
+  target 'TvMazeTests' do
+    inherit! :search_paths
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    puts target.name
+  end
 end
