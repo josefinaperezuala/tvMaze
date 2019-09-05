@@ -11,14 +11,12 @@ import PromiseKit
 import SwiftyJSON
 
 class APIManager {
-    
-    private let baseUrl = "http://api.tvmaze.com/"
-    
+
     func request(path: String, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: HTTPHeaders? = nil) -> Promise<JSON> {
         
         return Promise<JSON> { seal in
             
-            Alamofire.request(baseUrl + path, method: method,
+            Alamofire.request(Constants.baseUrl + path, method: method,
                               parameters: parameters,
                               encoding: encoding,
                               headers: headers).responseJSON { (response) in

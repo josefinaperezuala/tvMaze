@@ -8,8 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		17DFF74E97E2A66C7A613A4F /* libPods-TvMaze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5BF11F5699CF5AF66CC4924 /* libPods-TvMaze.a */; };
+		D99DDCF3232136C1005F049D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDCF2232136C1005F049D /* Constants.swift */; };
+		D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD0D23214985005F049D /* ShowLIstPresenter.swift */; };
+		D99DDD1823214985005F049D /* ShowLIstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DDD0F23214985005F049D /* ShowLIstView.xib */; };
+		D99DDD1923214985005F049D /* ShowLIstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD1023214985005F049D /* ShowLIstView.swift */; };
+		D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD1123214985005F049D /* ShowLIstProtocols.swift */; };
+		D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD1223214985005F049D /* ShowLIstModule.swift */; };
+		D99DDD1C23214985005F049D /* ShowLIstInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD1423214985005F049D /* ShowLIstInteractor.swift */; };
+		D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD1623214985005F049D /* ShowLIstRouter.swift */; };
+		D99DDD25232156AB005F049D /* TvMazeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD24232156AB005F049D /* TvMazeTests.swift */; };
+		D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD2D23217ABF005F049D /* ShowCell.swift */; };
+		D99DDD3023217ABF005F049D /* ShowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DDD2E23217ABF005F049D /* ShowCell.xib */; };
 		D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB071231FFA2B00724331 /* AppDelegate.swift */; };
-		D9DCB077231FFA2B00724331 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB075231FFA2B00724331 /* Main.storyboard */; };
 		D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB078231FFA2C00724331 /* Assets.xcassets */; };
 		D9DCB07C231FFA2C00724331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */; };
 		D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB0832320027900724331 /* ShowsRepository.swift */; };
@@ -27,12 +37,34 @@
 		D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB09D2320483000724331 /* WebChannelMapper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D99DDD27232156AB005F049D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D9DCB066231FFA2B00724331 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D9DCB06D231FFA2B00724331;
+			remoteInfo = TvMaze;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		05AEF95F30154FD16CFECC8E /* Pods-TvMaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMaze.release.xcconfig"; path = "Target Support Files/Pods-TvMaze/Pods-TvMaze.release.xcconfig"; sourceTree = "<group>"; };
 		39A77E6C40431FED63343F37 /* Pods-TvMaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMaze.debug.xcconfig"; path = "Target Support Files/Pods-TvMaze/Pods-TvMaze.debug.xcconfig"; sourceTree = "<group>"; };
+		D99DDCF2232136C1005F049D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D99DDD0D23214985005F049D /* ShowLIstPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstPresenter.swift; sourceTree = "<group>"; };
+		D99DDD0F23214985005F049D /* ShowLIstView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowLIstView.xib; sourceTree = "<group>"; };
+		D99DDD1023214985005F049D /* ShowLIstView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstView.swift; sourceTree = "<group>"; };
+		D99DDD1123214985005F049D /* ShowLIstProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstProtocols.swift; sourceTree = "<group>"; };
+		D99DDD1223214985005F049D /* ShowLIstModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstModule.swift; sourceTree = "<group>"; };
+		D99DDD1423214985005F049D /* ShowLIstInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstInteractor.swift; sourceTree = "<group>"; };
+		D99DDD1623214985005F049D /* ShowLIstRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstRouter.swift; sourceTree = "<group>"; };
+		D99DDD22232156AB005F049D /* TvMazeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TvMazeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D99DDD24232156AB005F049D /* TvMazeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvMazeTests.swift; sourceTree = "<group>"; };
+		D99DDD26232156AB005F049D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D99DDD2D23217ABF005F049D /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
+		D99DDD2E23217ABF005F049D /* ShowCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShowCell.xib; sourceTree = "<group>"; };
 		D9DCB06E231FFA2B00724331 /* TvMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TvMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DCB071231FFA2B00724331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D9DCB076231FFA2B00724331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D9DCB078231FFA2C00724331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9DCB07B231FFA2C00724331 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D9DCB07D231FFA2C00724331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +85,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D99DDD1F232156AB005F049D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9DCB06B231FFA2B00724331 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,10 +120,92 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		D99DDCF623214590005F049D /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD0B23214985005F049D /* ShowList */,
+				D99DDCFE23214932005F049D /* Show */,
+			);
+			path = Shows;
+			sourceTree = "<group>";
+		};
+		D99DDCFE23214932005F049D /* Show */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Show;
+			sourceTree = "<group>";
+		};
+		D99DDD0B23214985005F049D /* ShowList */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD0C23214985005F049D /* Presenter */,
+				D99DDD0E23214985005F049D /* View */,
+				D99DDD1123214985005F049D /* ShowLIstProtocols.swift */,
+				D99DDD1223214985005F049D /* ShowLIstModule.swift */,
+				D99DDD1323214985005F049D /* Interactor */,
+				D99DDD1523214985005F049D /* Router */,
+			);
+			path = ShowList;
+			sourceTree = "<group>";
+		};
+		D99DDD0C23214985005F049D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD0D23214985005F049D /* ShowLIstPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D99DDD0E23214985005F049D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD2C23217A9C005F049D /* Cell */,
+				D99DDD0F23214985005F049D /* ShowLIstView.xib */,
+				D99DDD1023214985005F049D /* ShowLIstView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D99DDD1323214985005F049D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD1423214985005F049D /* ShowLIstInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D99DDD1523214985005F049D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD1623214985005F049D /* ShowLIstRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D99DDD23232156AB005F049D /* TvMazeTests */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD24232156AB005F049D /* TvMazeTests.swift */,
+				D99DDD26232156AB005F049D /* Info.plist */,
+			);
+			path = TvMazeTests;
+			sourceTree = "<group>";
+		};
+		D99DDD2C23217A9C005F049D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D99DDD2D23217ABF005F049D /* ShowCell.swift */,
+				D99DDD2E23217ABF005F049D /* ShowCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		D9DCB065231FFA2B00724331 = {
 			isa = PBXGroup;
 			children = (
 				D9DCB070231FFA2B00724331 /* TvMaze */,
+				D99DDD23232156AB005F049D /* TvMazeTests */,
 				D9DCB06F231FFA2B00724331 /* Products */,
 				C890275A4B33F9D65643EACC /* Pods */,
 				700279D3344D2B2A476B4BEF /* Frameworks */,
@@ -95,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				D9DCB06E231FFA2B00724331 /* TvMaze.app */,
+				D99DDD22232156AB005F049D /* TvMazeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,15 +224,16 @@
 		D9DCB070231FFA2B00724331 /* TvMaze */ = {
 			isa = PBXGroup;
 			children = (
+				D99DDCF623214590005F049D /* Shows */,
 				D9DCB08B23202E9300724331 /* Models */,
 				D9DCB071231FFA2B00724331 /* AppDelegate.swift */,
-				D9DCB075231FFA2B00724331 /* Main.storyboard */,
 				D9DCB078231FFA2C00724331 /* Assets.xcassets */,
 				D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */,
 				D9DCB07D231FFA2C00724331 /* Info.plist */,
 				D9DCB0832320027900724331 /* ShowsRepository.swift */,
 				D9DCB0852320039D00724331 /* APIManager.swift */,
 				D9DCB08923202D4C00724331 /* ViewController.swift */,
+				D99DDCF2232136C1005F049D /* Constants.swift */,
 			);
 			path = TvMaze;
 			sourceTree = "<group>";
@@ -143,6 +266,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D99DDD21232156AB005F049D /* TvMazeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D99DDD29232156AB005F049D /* Build configuration list for PBXNativeTarget "TvMazeTests" */;
+			buildPhases = (
+				D99DDD1E232156AB005F049D /* Sources */,
+				D99DDD1F232156AB005F049D /* Frameworks */,
+				D99DDD20232156AB005F049D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D99DDD28232156AB005F049D /* PBXTargetDependency */,
+			);
+			name = TvMazeTests;
+			productName = TvMazeTests;
+			productReference = D99DDD22232156AB005F049D /* TvMazeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D9DCB06D231FFA2B00724331 /* TvMaze */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D9DCB080231FFA2C00724331 /* Build configuration list for PBXNativeTarget "TvMaze" */;
@@ -171,6 +312,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Josefina Perez";
 				TargetAttributes = {
+					D99DDD21232156AB005F049D = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = D9DCB06D231FFA2B00724331;
+					};
 					D9DCB06D231FFA2B00724331 = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -190,18 +335,27 @@
 			projectRoot = "";
 			targets = (
 				D9DCB06D231FFA2B00724331 /* TvMaze */,
+				D99DDD21232156AB005F049D /* TvMazeTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D99DDD20232156AB005F049D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9DCB06C231FFA2B00724331 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9DCB07C231FFA2C00724331 /* LaunchScreen.storyboard in Resources */,
+				D99DDD1823214985005F049D /* ShowLIstView.xib in Resources */,
+				D99DDD3023217ABF005F049D /* ShowCell.xib in Resources */,
 				D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */,
-				D9DCB077231FFA2B00724331 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,16 +387,31 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D99DDD1E232156AB005F049D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D99DDD25232156AB005F049D /* TvMazeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D9DCB06A231FFA2B00724331 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9DCB09A232044EF00724331 /* ImageMapper.swift in Sources */,
+				D99DDD1923214985005F049D /* ShowLIstView.swift in Sources */,
+				D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */,
 				D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */,
 				D9DCB092232042F300724331 /* ScheduleMapper.swift in Sources */,
 				D9DCB0862320039D00724331 /* APIManager.swift in Sources */,
 				D9DCB0962320441000724331 /* NetworkMapper.swift in Sources */,
+				D99DDCF3232136C1005F049D /* Constants.swift in Sources */,
+				D99DDD1C23214985005F049D /* ShowLIstInteractor.swift in Sources */,
+				D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */,
 				D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */,
+				D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */,
+				D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */,
 				D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */,
 				D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */,
 				D9DCB08E2320341400724331 /* ShowMapper.swift in Sources */,
@@ -250,21 +419,22 @@
 				D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */,
 				D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */,
 				D9DCB0902320425300724331 /* CountryMapper.swift in Sources */,
+				D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */,
 				D9DCB0942320437B00724331 /* RatingMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		D9DCB075231FFA2B00724331 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D9DCB076231FFA2B00724331 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		D99DDD28232156AB005F049D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D9DCB06D231FFA2B00724331 /* TvMaze */;
+			targetProxy = D99DDD27232156AB005F049D /* PBXContainerItemProxy */;
 		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
 		D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -276,6 +446,44 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D99DDD2A232156AB005F049D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TvMazeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Uala.TvMazeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TvMaze.app/TvMaze";
+			};
+			name = Debug;
+		};
+		D99DDD2B232156AB005F049D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TvMazeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = Uala.TvMazeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TvMaze.app/TvMaze";
+			};
+			name = Release;
+		};
 		D9DCB07E231FFA2C00724331 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -431,6 +639,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D99DDD29232156AB005F049D /* Build configuration list for PBXNativeTarget "TvMazeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D99DDD2A232156AB005F049D /* Debug */,
+				D99DDD2B232156AB005F049D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D9DCB069231FFA2B00724331 /* Build configuration list for PBXProject "TvMaze" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
