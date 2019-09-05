@@ -27,14 +27,3 @@ protocol ShowLIstViewProtocol: class {
     func show(show: [ShowPresentable])
     func show(errorMsg: String)
 }
-
-
-struct ShowPresentable {
-    var name: String
-    var imageUrl: URL?
-    
-    init(show: Show) {
-        name = show.name
-        imageUrl = URL(string: show.image.original)
-    }
-}

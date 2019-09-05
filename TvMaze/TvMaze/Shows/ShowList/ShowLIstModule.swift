@@ -17,7 +17,7 @@ class ShowLIstModule {
         interactor.presenter = presenter
         router.viewController = view
         
-        interactor.repository = ShowsRepository() //or showMock
+        interactor.repository = ShowsRepository()
         
         return UINavigationController(rootViewController: view)
     }    

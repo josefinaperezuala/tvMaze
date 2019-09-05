@@ -11,8 +11,8 @@ import SwiftyJSON
 
 protocol ShowsRepositoryProtocol {
     func getShows() -> Promise<[Show]>
-//    func getShows(page: String) -> Promise<[Show]>
-//    func search(name: String) -> Promise<[Show]>
+    func getShows(page: String) -> Promise<[Show]>
+    func search(name: String) -> Promise<[Show]>
 }
 
 class ShowsRepository: ShowsRepositoryProtocol {

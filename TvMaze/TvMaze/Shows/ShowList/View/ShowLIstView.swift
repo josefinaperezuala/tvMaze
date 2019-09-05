@@ -8,6 +8,7 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     var shows = [ShowPresentable]()
     
     let showCellIdentifier = "ShowCell"
+    let estimatedRowHeight: CGFloat = 110
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,8 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     
     func setUpTable(){
         showsTable.register(ShowCell.self)
+        showsTable.estimatedRowHeight = estimatedRowHeight
+        showsTable.rowHeight = UITableView.automaticDimension
     }
     
     func show(show: [ShowPresentable]) {
@@ -42,9 +45,5 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
         
         showCell.configure(show: shows[indexPath.row])
         return showCell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 110
     }
 }
