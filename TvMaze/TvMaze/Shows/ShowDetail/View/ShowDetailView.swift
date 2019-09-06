@@ -7,19 +7,22 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
     @IBOutlet weak var episodesTable: UITableView!
     
     var presenter: ShowDetailPresenterProtocol?
-    
-    var showDetail: ShowDetailPresentable!
+
     var episodes: [EpisodePresentable] = []
     
     let cellIdentifier = "EpisodeCell"
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
-        presenter?.viewDidLoad(showId: showDetail.id)
+        presenter?.viewDidLoad()
     }
     
-    func setup() {
+    func show(episodes: [EpisodePresentable]) {
+        self.episodes = episodes
+        episodesTable.reloadData()
+    }
+    
+    func show(showDetail: ShowDetailPresentable) {
         title = showDetail.name
         showImg.kf.setImage(
             with: showDetail.imageURL,
@@ -27,11 +30,6 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
             options: nil)
         genresLbl.text = showDetail.genres
         episodesTable.register(EpisodeCell.self)
-    }
-    
-    func show(episodes: [EpisodePresentable]) {
-        self.episodes = episodes
-        episodesTable.reloadData()
     }
 }
 

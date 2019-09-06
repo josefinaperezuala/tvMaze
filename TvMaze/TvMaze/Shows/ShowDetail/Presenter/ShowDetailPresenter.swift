@@ -5,9 +5,15 @@ class ShowDetailPresenter: ShowDetailPresenterProtocol {
     weak var view: ShowDetailViewProtocol?
     var interactor: ShowDetailInteractorProtocol?
     var router: ShowDetailRouterProtocol?
+    var show: Show?
     
-    func viewDidLoad(showId: Int) {
-        interactor?.getEpisodes(showId: showId)
+    func viewDidLoad() {
+        guard let show = show else {
+            return
+        }
+        
+        view?.show(showDetail: ShowDetailPresentable(show: show))
+        interactor?.getEpisodes(showId: show.id)
     }
     
     func didGet(episodes: [Episode]) {

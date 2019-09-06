@@ -5,7 +5,8 @@ protocol ShowDetailRouterProtocol: class {
 }
 
 protocol ShowDetailPresenterProtocol: class {
-    func viewDidLoad(showId: Int)
+    var show: Show? { get set }
+    func viewDidLoad()
     func didGet(episodes: [Episode])
 }
 
@@ -20,5 +21,6 @@ protocol ShowDetailInteractorProtocol: class {
 protocol ShowDetailViewProtocol: class {
 
   var presenter: ShowDetailPresenterProtocol?  { get set }
+    func show(showDetail: ShowDetailPresentable)
     func show(episodes: [EpisodePresentable])
 }

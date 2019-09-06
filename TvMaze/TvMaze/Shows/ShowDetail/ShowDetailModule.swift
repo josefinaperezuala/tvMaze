@@ -2,7 +2,7 @@ import UIKit
 
 class ShowDetailModule {
 
-    static func build() -> UIViewController {        
+    static func build(show: Show) -> UIViewController {
         let view = ShowDetailView()
         let interactor = ShowDetailInteractor()
         let router = ShowDetailRouter()
@@ -11,6 +11,7 @@ class ShowDetailModule {
         presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
+        presenter.show = show
         
         view.presenter = presenter
         interactor.presenter = presenter

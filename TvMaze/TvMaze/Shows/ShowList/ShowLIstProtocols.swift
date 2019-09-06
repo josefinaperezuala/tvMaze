@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ShowLIstRouterProtocol: class {
-    func showDetail(show: ShowDetailPresentable)
+    func showDetail(show: Show)
 }
 
 protocol ShowLIstPresenterProtocol: class {

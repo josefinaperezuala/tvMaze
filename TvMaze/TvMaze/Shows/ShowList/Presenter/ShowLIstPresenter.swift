@@ -24,6 +24,6 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     }
     
     func showDetail(show: Show) {
-        router?.showDetail(show: ShowDetailPresentable(show: show))
+        router?.showDetail(show: show)
     }
 }
