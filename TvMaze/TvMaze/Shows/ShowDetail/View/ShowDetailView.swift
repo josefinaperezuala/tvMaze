@@ -10,8 +10,6 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
     var presenter: ShowDetailPresenterProtocol?
 
     var episodes: [EpisodePresentable] = []
-    
-    let cellIdentifier = "EpisodeCell"
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +40,7 @@ extension ShowDetailView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let episodeCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? EpisodeCell else {
-            return UITableViewCell()
-        }
-        
+        let episodeCell: EpisodeCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         episodeCell.configure(episode: episodes[indexPath.row])
         return episodeCell
     }
