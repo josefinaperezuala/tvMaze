@@ -9,14 +9,12 @@
 import Foundation
 
 struct ShowDetailPresentable {
-    var id: Int
     var name: String
     var genres: String
     var imageURL: URL?
     var schedule: String
     
     init(show: Show) {
-        id = show.id
         name = show.name
         imageURL = URL(string: show.image.original)
         genres = ""
