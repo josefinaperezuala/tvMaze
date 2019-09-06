@@ -5,6 +5,7 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
     @IBOutlet weak var showImg: UIImageView!
     @IBOutlet weak var genresLbl: UILabel!
     @IBOutlet weak var episodesTable: UITableView!
+    @IBOutlet weak var scheduleLbl: UILabel!
     
     var presenter: ShowDetailPresenterProtocol?
 
@@ -29,6 +30,7 @@ class ShowDetailView: UIViewController, ShowDetailViewProtocol {
             placeholder: UIImage(named: "placeholder"),
             options: nil)
         genresLbl.text = showDetail.genres
+        scheduleLbl.text = showDetail.schedule
         episodesTable.register(EpisodeCell.self)
     }
 }

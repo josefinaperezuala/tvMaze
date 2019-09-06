@@ -4,7 +4,7 @@ class ShowDetailInteractor: ShowDetailInteractorProtocol {
 
     weak var presenter: ShowDetailPresenterProtocol?
     
-    var repository: ShowsRepository = ShowsRepository()
+    var repository: ShowDetailRepository = ShowDetailRepository()
     
     func getEpisodes(showId: Int) {
         repository.getEpisodes(showId: showId).done { episodes in

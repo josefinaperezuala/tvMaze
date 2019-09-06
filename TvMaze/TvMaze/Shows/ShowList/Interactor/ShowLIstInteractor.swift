@@ -15,10 +15,4 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
                 
         }
     }
-    
-    func getShow(id: Int) {
-        repository.getShow(id: id).done { show in
-            self.presenter?.showDetail(show: show)
-        }
-    }
 }

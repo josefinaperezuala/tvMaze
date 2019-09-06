@@ -36,6 +36,7 @@
 		D9B6A1A12322A1AC00C24FFA /* EpisodePresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6A1A02322A1AC00C24FFA /* EpisodePresentable.swift */; };
 		D9B6A1A92322A35100C24FFA /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6A1A72322A35100C24FFA /* EpisodeCell.swift */; };
 		D9B6A1AA2322A35100C24FFA /* EpisodeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9B6A1A82322A35100C24FFA /* EpisodeCell.xib */; };
+		D9B6A1AD2322BA8700C24FFA /* ShowDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9B6A1AC2322BA8700C24FFA /* ShowDetailRepository.swift */; };
 		D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB071231FFA2B00724331 /* AppDelegate.swift */; };
 		D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB078231FFA2C00724331 /* Assets.xcassets */; };
 		D9DCB07C231FFA2C00724331 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */; };
@@ -99,6 +100,7 @@
 		D9B6A1A02322A1AC00C24FFA /* EpisodePresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodePresentable.swift; sourceTree = "<group>"; };
 		D9B6A1A72322A35100C24FFA /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 		D9B6A1A82322A35100C24FFA /* EpisodeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EpisodeCell.xib; sourceTree = "<group>"; };
+		D9B6A1AC2322BA8700C24FFA /* ShowDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailRepository.swift; sourceTree = "<group>"; };
 		D9DCB06E231FFA2B00724331 /* TvMaze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TvMaze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9DCB071231FFA2B00724331 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D9DCB078231FFA2C00724331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +167,8 @@
 		D99DDCF623214590005F049D /* Shows */ = {
 			isa = PBXGroup;
 			children = (
+				D9B6A1AB2322BA6D00C24FFA /* Repositories */,
+				D9DCB08B23202E9300724331 /* Models */,
 				D99DDD592321A28D005F049D /* ShowDetail */,
 				D99DDD0B23214985005F049D /* ShowList */,
 				D99DDCFE23214932005F049D /* Presentables */,
@@ -328,6 +332,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D9B6A1AB2322BA6D00C24FFA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D9DCB0832320027900724331 /* ShowsRepository.swift */,
+				D9B6A1AC2322BA8700C24FFA /* ShowDetailRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		D9DCB065231FFA2B00724331 = {
 			isa = PBXGroup;
 			children = (
@@ -353,12 +366,10 @@
 			children = (
 				D99DDD31232189DB005F049D /* Extensions */,
 				D99DDCF623214590005F049D /* Shows */,
-				D9DCB08B23202E9300724331 /* Models */,
 				D9DCB071231FFA2B00724331 /* AppDelegate.swift */,
 				D9DCB078231FFA2C00724331 /* Assets.xcassets */,
 				D9DCB07A231FFA2C00724331 /* LaunchScreen.storyboard */,
 				D9DCB07D231FFA2C00724331 /* Info.plist */,
-				D9DCB0832320027900724331 /* ShowsRepository.swift */,
 				D9DCB0852320039D00724331 /* APIManager.swift */,
 				D9DCB08923202D4C00724331 /* ViewController.swift */,
 				D99DDCF2232136C1005F049D /* Constants.swift */,
@@ -559,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9DCB09A232044EF00724331 /* ImageMapper.swift in Sources */,
+				D9B6A1AD2322BA8700C24FFA /* ShowDetailRepository.swift in Sources */,
 				D99DDD1923214985005F049D /* ShowLIstView.swift in Sources */,
 				D99DDD3723218E83005F049D /* ShowPresentable.swift in Sources */,
 				D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */,

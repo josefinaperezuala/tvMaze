@@ -6,11 +6,14 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     var interactor: ShowLIstInteractorProtocol?
     var router: ShowLIstRouterProtocol?
     
+    var shows: [Show] = []
+    
     func viewDidLoad() {
         interactor?.getShows()
     }
     
     func didGet(shows: [Show]) {
+        self.shows = shows
         let presentables = shows.map({ ShowPresentable(show: $0) })
         view?.show(show: presentables)
     }
@@ -20,10 +23,8 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     }
     
     func didSelect(showId: Int) {
-        interactor?.getShow(id: showId)
-    }
-    
-    func showDetail(show: Show) {
-        router?.showDetail(show: show)
+        if let show = shows.first(where: { $0.id == showId }) {
+            router?.showDetail(show: show)
+        }
     }
 }
