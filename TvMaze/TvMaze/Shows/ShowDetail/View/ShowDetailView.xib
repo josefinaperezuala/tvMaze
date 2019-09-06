@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -54,7 +55,7 @@
                 <constraint firstItem="O0Q-ah-jnb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9n9-9K-pj6"/>
                 <constraint firstItem="O0Q-ah-jnb" firstAttribute="top" secondItem="v2X-rz-RF8" secondAttribute="bottom" constant="26" id="InW-4R-gYx"/>
                 <constraint firstItem="v2X-rz-RF8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J3n-rt-4Ja"/>
-                <constraint firstItem="v2X-rz-RF8" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="MQ8-w4-U1f"/>
+                <constraint firstItem="v2X-rz-RF8" firstAttribute="top" secondItem="WWk-ok-GIp" secondAttribute="top" constant="20" id="MQ8-w4-U1f"/>
                 <constraint firstAttribute="bottom" secondItem="xld-cE-pxg" secondAttribute="bottom" constant="81" id="T1r-tJ-32u"/>
                 <constraint firstAttribute="trailing" secondItem="O0Q-ah-jnb" secondAttribute="trailing" constant="20" id="TPF-4D-Wqk"/>
                 <constraint firstItem="nBF-rv-CRS" firstAttribute="top" secondItem="O0Q-ah-jnb" secondAttribute="bottom" constant="20" id="U0Y-XX-hHa"/>
@@ -65,6 +66,7 @@
                 <constraint firstItem="xld-cE-pxg" firstAttribute="top" secondItem="nBF-rv-CRS" secondAttribute="bottom" constant="30" id="uqX-gZ-2h0"/>
                 <constraint firstItem="nBF-rv-CRS" firstAttribute="trailing" secondItem="O0Q-ah-jnb" secondAttribute="trailing" id="utz-MD-6ip"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="WWk-ok-GIp"/>
             <point key="canvasLocation" x="65" y="9"/>
         </view>
     </objects>

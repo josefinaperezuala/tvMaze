@@ -19,8 +19,8 @@ struct ShowDetailPresentable {
         name = show.name
         imageURL = URL(string: show.image.original)
         genres = ""
-        for genre in show.genres {
-            genres.append(genre)
+        show.genres.enumerated().forEach{
+            genres.append("\($0.0 != show.genres.count - 1 ? "\($0.1) | " : "\($0.1)")")
         }
     }
 }
