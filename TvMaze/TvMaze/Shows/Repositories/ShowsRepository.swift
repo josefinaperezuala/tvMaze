@@ -16,7 +16,7 @@ protocol ShowsRepositoryProtocol {
 }
 
 class ShowsRepository: ShowsRepositoryProtocol {
-    
+
     let apiManager = APIManager()
     
     func getShows() -> Promise<[Show]> {

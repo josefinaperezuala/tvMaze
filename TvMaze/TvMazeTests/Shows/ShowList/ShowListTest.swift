@@ -51,6 +51,13 @@ class ShowListTest: XCTestCase {
 }
 
 class ShowMock: ShowsRepositoryProtocol {
+    
+    func getShow(id: Int) -> Promise<Show> {
+        return Promise.value(
+            createShow()
+            )
+    }
+    
     func getShows(page: String) -> Promise<[Show]> {
         return Promise.value([
             createShow()

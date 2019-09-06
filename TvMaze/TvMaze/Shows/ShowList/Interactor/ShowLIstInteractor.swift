@@ -3,6 +3,7 @@ import PromiseKit
 
 class ShowLIstInteractor: ShowLIstInteractorProtocol {
     
+    
     weak var presenter: ShowLIstPresenterProtocol?
     
     var repository: ShowsRepositoryProtocol = ShowsRepository()

@@ -1,7 +1,7 @@
 import Foundation
 
 protocol ShowLIstRouterProtocol: class {
-
+    func showDetail(show: Show)
 }
 
 protocol ShowLIstPresenterProtocol: class {
@@ -9,6 +9,7 @@ protocol ShowLIstPresenterProtocol: class {
     func viewDidLoad()
     func didGet(shows: [Show])
     func didFail(error: Error)
+    func didSelect(row: Int)
 }
 
 

@@ -39,11 +39,12 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let showCell = tableView.dequeueReusableCell(withIdentifier: showCellIdentifier) as? ShowCell else {
-            return UITableViewCell()
-        }
-        
+        let showCell: ShowCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
         showCell.configure(show: shows[indexPath.row])
         return showCell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelect(row: indexPath.row)
     }
 }
