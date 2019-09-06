@@ -14,6 +14,7 @@ extension UITableViewCell: NibLoadableView { }
 extension UITableViewCell: ReusableView { }
 
 extension UITableViewCell {
+    
     func clearInit() {
         self.contentView.backgroundColor = .clear
         self.backgroundColor = .clear

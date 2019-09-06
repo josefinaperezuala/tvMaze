@@ -14,6 +14,7 @@ protocol ShowsRepositoryProtocol {
     func getShows(page: String) -> Promise<[Show]>
     func search(name: String) -> Promise<[Show]>
     func getShow(id: Int) -> Promise<Show>
+    func getEpisodes(showId: Int) -> Promise<[Episode]>
 }
 
 class ShowsRepository: ShowsRepositoryProtocol {
@@ -49,6 +50,18 @@ class ShowsRepository: ShowsRepositoryProtocol {
                 let show = ShowMapper.map(from: json)
                 seal.fulfill(show)
                 }.catch{ error in
+                    seal.reject(error)
+            }
+        }
+    }
+    
+    func getEpisodes(showId: Int) -> Promise<[Episode]> {
+        
+        return Promise<[Episode]> { seal in
+            apiManager.request(path: "shows/\(showId)/episodes", method: .get).done { json in
+                let episodes = json.arrayValue.compactMap{ EpisodeMapper.map(from: $0) }
+                seal.fulfill(episodes)
+                }.catch { error in
                     seal.reject(error)
             }
         }

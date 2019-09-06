@@ -9,13 +9,18 @@
 import Foundation
 
 struct ShowDetailPresentable {
+    var id: Int
     var name: String
-    var genres: [String]
+    var genres: String
     var imageURL: URL?
     
     init(show: Show) {
+        id = show.id
         name = show.name
-        genres = show.genres
         imageURL = URL(string: show.image.original)
+        genres = ""
+        for genre in show.genres {
+            genres.append(genre)
+        }
     }
 }
