@@ -9,7 +9,7 @@ protocol ShowLIstPresenterProtocol: class {
     func viewDidLoad()
     func didGet(shows: [Show])
     func didFail(error: Error)
-    func didSelect(showId: Int)
+    func didSelect(row: Int)
 }
 
 

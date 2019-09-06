@@ -22,9 +22,7 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
         view?.show(errorMsg: error.localizedDescription)
     }
     
-    func didSelect(showId: Int) {
-        if let show = shows.first(where: { $0.id == showId }) {
-            router?.showDetail(show: show)
-        }
+    func didSelect(row: Int) {
+        router?.showDetail(show: shows[row])
     }
 }

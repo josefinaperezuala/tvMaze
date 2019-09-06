@@ -45,6 +45,6 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.didSelect(showId: shows[indexPath.row].id)
+        presenter?.didSelect(row: indexPath.row)
     }
 }
