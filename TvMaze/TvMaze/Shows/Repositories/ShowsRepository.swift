@@ -30,7 +30,7 @@ class ShowsRepository: ShowsRepositoryProtocol {
     func search(name: String) -> Promise<[Show]> {
         
         return Promise<[Show]> { seal in
-            apiManager.request(path: "search/shows?q=" + name, method: .get).done { json in
+            apiManager.request(APIRouter.search(name: name)).done { json in
                 
                 let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0["show"]) }
                 seal.fulfill(shows)
@@ -43,9 +43,9 @@ class ShowsRepository: ShowsRepositoryProtocol {
     private func getShowsPages(page: String? = nil) -> Promise<[Show]> {
         
         return Promise<[Show]> { seal in
-            apiManager.request(path: "shows\(page == nil ? "" : "?page=\(page ?? "0")")",
-                method: .get).done { json in
-                    
+            apiManager.request(
+                page != nil ? APIRouter.showsPage(page: page ?? "0") : APIRouter.shows).done { json in
+            
                     let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0) }
                     seal.fulfill(shows)
                 }.catch { error in

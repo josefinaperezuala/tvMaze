@@ -12,10 +12,10 @@ import SwiftyJSON
 
 class APIManager {
 
-    func request(path: String, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: HTTPHeaders? = nil) -> Promise<JSON> {
-        
+    func request(_ request: Alamofire.URLRequestConvertible) -> Promise<JSON> {
+       
         return Promise<JSON> { seal in
-            Alamofire.request(APIRouter.shows).responseJSON(completionHandler: { (response) in
+            Alamofire.request(request).responseJSON(completionHandler: { (response) in
                 
                 switch response.result {
                 case .success:

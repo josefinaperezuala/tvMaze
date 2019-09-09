@@ -8,19 +8,19 @@
 
 import SwiftyJSON
 
-struct Schedule {
+struct Schedule: Codable {
     
     let time: String
     let days: [String]
 }
 
-struct Image {
+struct Image: Codable {
     
     let medium: String
     let original: String
 }
 
-class Show {
+class Show: Codable {
     
     let id: Int
     let url: String

@@ -12,6 +12,9 @@ import Alamofire
 enum APIRouter: URLRequestConvertible {
     
     case shows
+    case showsPage(page: String)
+    case search(name: String)
+    case episodes(showId: Int)
     
     // MARK: - HTTPMethod
     private var method: HTTPMethod {
@@ -23,6 +26,12 @@ enum APIRouter: URLRequestConvertible {
         switch self {
         case .shows:
             return "shows"
+        case .showsPage(let page):
+            return "shows\(page)"
+        case .search(let name):
+            return "search/shows?q=" + name
+        case .episodes(let showId):
+            return "shows/\(showId)/episodes"
         }
     }
     
