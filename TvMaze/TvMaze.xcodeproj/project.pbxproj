@@ -46,14 +46,8 @@
 		D9DCB088232015D900724331 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB087232015D900724331 /* Show.swift */; };
 		D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB08923202D4C00724331 /* ViewController.swift */; };
 		D9DCB08E2320341400724331 /* ShowMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB08D2320341400724331 /* ShowMapper.swift */; };
-		D9DCB0902320425300724331 /* CountryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB08F2320425300724331 /* CountryMapper.swift */; };
 		D9DCB092232042F300724331 /* ScheduleMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB091232042F300724331 /* ScheduleMapper.swift */; };
-		D9DCB0942320437B00724331 /* RatingMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB0932320437B00724331 /* RatingMapper.swift */; };
-		D9DCB0962320441000724331 /* NetworkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB0952320441000724331 /* NetworkMapper.swift */; };
-		D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB0972320448400724331 /* ExternalsMapper.swift */; };
 		D9DCB09A232044EF00724331 /* ImageMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB099232044EF00724331 /* ImageMapper.swift */; };
-		D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB09B2320454800724331 /* LinksMapper.swift */; };
-		D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB09D2320483000724331 /* WebChannelMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,14 +107,8 @@
 		D9DCB087232015D900724331 /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
 		D9DCB08923202D4C00724331 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9DCB08D2320341400724331 /* ShowMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMapper.swift; sourceTree = "<group>"; };
-		D9DCB08F2320425300724331 /* CountryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryMapper.swift; sourceTree = "<group>"; };
 		D9DCB091232042F300724331 /* ScheduleMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleMapper.swift; sourceTree = "<group>"; };
-		D9DCB0932320437B00724331 /* RatingMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingMapper.swift; sourceTree = "<group>"; };
-		D9DCB0952320441000724331 /* NetworkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMapper.swift; sourceTree = "<group>"; };
-		D9DCB0972320448400724331 /* ExternalsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalsMapper.swift; sourceTree = "<group>"; };
 		D9DCB099232044EF00724331 /* ImageMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMapper.swift; sourceTree = "<group>"; };
-		D9DCB09B2320454800724331 /* LinksMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksMapper.swift; sourceTree = "<group>"; };
-		D9DCB09D2320483000724331 /* WebChannelMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebChannelMapper.swift; sourceTree = "<group>"; };
 		E81CF5AA95EA35C56F58429A /* Pods-TvMazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMazeTests.debug.xcconfig"; path = "Target Support Files/Pods-TvMazeTests/Pods-TvMazeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F21481784AB759F6A05030E0 /* libPods-TvMazeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMazeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BF11F5699CF5AF66CC4924 /* libPods-TvMaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -403,14 +391,8 @@
 			isa = PBXGroup;
 			children = (
 				D9DCB08D2320341400724331 /* ShowMapper.swift */,
-				D9DCB08F2320425300724331 /* CountryMapper.swift */,
 				D9DCB091232042F300724331 /* ScheduleMapper.swift */,
-				D9DCB0932320437B00724331 /* RatingMapper.swift */,
-				D9DCB0952320441000724331 /* NetworkMapper.swift */,
-				D9DCB0972320448400724331 /* ExternalsMapper.swift */,
 				D9DCB099232044EF00724331 /* ImageMapper.swift */,
-				D9DCB09B2320454800724331 /* LinksMapper.swift */,
-				D9DCB09D2320483000724331 /* WebChannelMapper.swift */,
 				D9B6A19E23229CC400C24FFA /* EpisodeMapper.swift */,
 			);
 			path = Mappers;
@@ -589,13 +571,11 @@
 				D9DCB092232042F300724331 /* ScheduleMapper.swift in Sources */,
 				D99DDD6A2321A28D005F049D /* ShowDetailInteractor.swift in Sources */,
 				D9DCB0862320039D00724331 /* APIManager.swift in Sources */,
-				D9DCB0962320441000724331 /* NetworkMapper.swift in Sources */,
 				D99DDCF3232136C1005F049D /* Constants.swift in Sources */,
 				D99DDD692321A28D005F049D /* ShowDetailModule.swift in Sources */,
 				D99DDD1C23214985005F049D /* ShowLIstInteractor.swift in Sources */,
 				D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */,
 				D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */,
-				D9DCB09C2320454800724331 /* LinksMapper.swift in Sources */,
 				D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */,
 				D9B6A1A12322A1AC00C24FFA /* EpisodePresentable.swift in Sources */,
 				D9B6A1A92322A35100C24FFA /* EpisodeCell.swift in Sources */,
@@ -605,18 +585,14 @@
 				D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */,
 				D9B6A1B12322CF5E00C24FFA /* APIRouter.swift in Sources */,
 				D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */,
-				D9DCB09E2320483000724331 /* WebChannelMapper.swift in Sources */,
 				D9DCB08E2320341400724331 /* ShowMapper.swift in Sources */,
 				D99DDD6B2321A28D005F049D /* ShowDetailRouter.swift in Sources */,
 				D9DCB088232015D900724331 /* Show.swift in Sources */,
-				D9DCB0982320448400724331 /* ExternalsMapper.swift in Sources */,
 				D9B6A19F23229CC400C24FFA /* EpisodeMapper.swift in Sources */,
 				D99DDD652321A28D005F049D /* ShowDetailPresenter.swift in Sources */,
 				D99DDD33232189EF005F049D /* UITableView.swift in Sources */,
 				D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */,
-				D9DCB0902320425300724331 /* CountryMapper.swift in Sources */,
 				D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */,
-				D9DCB0942320437B00724331 /* RatingMapper.swift in Sources */,
 				D99DDD6D2321A809005F049D /* ShowDetailPresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

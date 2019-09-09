@@ -21,8 +21,7 @@ class EpisodeMapper: NSObject {
                        airstamp: json["airstamp"].stringValue,
                        runtime: json["runtime"].intValue,
                        image: ImageMapper.map(from: json["image"]),
-                       summary: json["summary"].stringValue,
-                       links: LinksMapper.map(from: json["_links"]))
+                       summary: json["summary"].stringValue)
     }
 
 }
