@@ -7,7 +7,7 @@
 //
 
 import PromiseKit
-import SwiftyJSON
+import Alamofire
 
 protocol ShowsRepositoryProtocol {
     func getShows() -> Promise<[Show]>
@@ -30,9 +30,7 @@ class ShowsRepository: ShowsRepositoryProtocol {
     func search(name: String) -> Promise<[Show]> {
         
         return Promise<[Show]> { seal in
-            apiManager.request(APIRouter.search(name: name)).done { json in
-                
-                let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0["show"]) }
+            apiManager.request(ShowsRouter.search(name: name)).done { shows in
                 seal.fulfill(shows)
                 }.catch { error in
                     seal.reject(error)
@@ -44,9 +42,7 @@ class ShowsRepository: ShowsRepositoryProtocol {
         
         return Promise<[Show]> { seal in
             apiManager.request(
-                page != nil ? APIRouter.showsPage(page: page ?? "0") : APIRouter.shows).done { json in
-            
-                    let shows = json.arrayValue.compactMap{ ShowMapper.map(from: $0) }
+                page != nil ? ShowsRouter.showsPage(page: page ?? "0") : ShowsRouter.shows).done { shows in
                     seal.fulfill(shows)
                 }.catch { error in
                     seal.reject(error)

@@ -1,46 +1,23 @@
 //
-//  APIRouter.swift
+//  APIConfiguration.swift
 //  TvMaze
 //
-//  Created by Josefina Perez on 06/09/2019.
+//  Created by Josefina Perez on 09/09/2019.
 //  Copyright © 2019 Josefina Perez. All rights reserved.
 //
 
 import Foundation
 import Alamofire
 
-enum APIRouter: URLRequestConvertible {
+protocol APIConfiguration: URLRequestConvertible {
+    var method: HTTPMethod { get }
+    var path: String { get }
+    var parameters: Parameters? { get }
+    func asURLRequest() throws -> URLRequest
+}
+
+extension APIConfiguration {
     
-    case shows
-    case showsPage(page: String)
-    case search(name: String)
-    case episodes(showId: Int)
-    
-    // MARK: - HTTPMethod
-    private var method: HTTPMethod {
-       return .get
-    }
-    
-    // MARK: - Path
-    private var path: String {
-        switch self {
-        case .shows:
-            return "shows"
-        case .showsPage(let page):
-            return "shows\(page)"
-        case .search(let name):
-            return "search/shows?q=" + name
-        case .episodes(let showId):
-            return "shows/\(showId)/episodes"
-        }
-    }
-    
-    // MARK: - Parameters
-    private var parameters: Parameters? {
-        return nil
-    }
-    
-    // MARK: - URLRequestConvertible
     func asURLRequest() throws -> URLRequest {
         let url = try Constants.baseUrl.asURL()
         

@@ -6,21 +6,19 @@
 //  Copyright © 2019 Josefina Perez. All rights reserved.
 //
 
-import SwiftyJSON
-
-struct Schedule: Codable {
+struct Schedule: Decodable {
     
     let time: String
     let days: [String]
 }
 
-struct Image: Codable {
+struct Image: Decodable {
     
     let medium: String
     let original: String
 }
 
-class Show: Codable {
+class Show: Decodable {
     
     let id: Int
     let url: String

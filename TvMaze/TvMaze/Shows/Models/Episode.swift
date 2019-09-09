@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Episode {
+class Episode: Decodable {
     var id: Int
     var url: String
     var name: String

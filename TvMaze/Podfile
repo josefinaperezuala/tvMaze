@@ -3,8 +3,7 @@
 
 target 'TvMaze' do
 	pod "PromiseKit", "~> 6.8"
-	pod 'Alamofire'
-	pod 'SwiftyJSON'
+	pod 'Alamofire', '~> 5.0.0-rc.2'
 	pod 'Kingfisher', '~> 5.0'
   
   target 'TvMazeTests' do

@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.9.0)
+  - Alamofire (5.0.0-rc.2)
   - Kingfisher (5.7.1)
   - PromiseKit (6.11.0):
     - PromiseKit/CorePromise (= 6.11.0)
@@ -10,27 +10,23 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.11.0):
     - PromiseKit/CorePromise
-  - SwiftyJSON (5.0.0)
 
 DEPENDENCIES:
-  - Alamofire
+  - Alamofire (~> 5.0.0-rc.2)
   - Kingfisher (~> 5.0)
   - PromiseKit (~> 6.8)
-  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Kingfisher
     - PromiseKit
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
+  Alamofire: f9450d3c7f6bea2ad62e7a541c3e9b186c7991d6
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   PromiseKit: e4863d06976e7dee5e41c04fc7371c16b3600292
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 1accbae7c7076b26d93aa5d3ccc69ead20157d34
+PODFILE CHECKSUM: 8c9492ec41208517f77a535e60aff8414f623a76
 
 COCOAPODS: 1.7.5
