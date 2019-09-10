@@ -8,27 +8,22 @@
 
 import Alamofire
 import PromiseKit
-import SwiftyJSON
 
 class APIManager {
 
-    func request(path: String, method: HTTPMethod, parameters: Parameters? = nil, encoding: ParameterEncoding = JSONEncoding.default, headers: HTTPHeaders? = nil) -> Promise<JSON> {
-        
-        return Promise<JSON> { seal in
-            
-            Alamofire.request(Constants.baseUrl + path, method: method,
-                              parameters: parameters,
-                              encoding: encoding,
-                              headers: headers).responseJSON { (response) in
-                                
-                                switch response.result {
-                                case .success:
-                                    guard let value = response.result.value else { return }
-                                    seal.fulfill(JSON(value))
-                                case .failure(let error):
-                                    seal.reject(error)
-                                }
-            }
+    func request<T: Decodable>(_ request: Alamofire.URLRequestConvertible) -> Promise<T> {
+       
+        return Promise<T> { seal in
+            AF.request(request).responseDecodable(completionHandler: {(response: DataResponse<T, AFError>) in
+                
+                switch response.result {
+                case .success(let value):
+                    seal.fulfill(value)
+                case .failure(let error):
+                    seal.reject(error)
+                }
+                
+            })
         }
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import PromiseKit
-import SwiftyJSON
+import Alamofire
 
 protocol ShowDetailRepositoryProtocol {
     func getEpisodes(showId: Int) -> Promise<[Episode]>
@@ -20,8 +20,7 @@ class ShowDetailRepository: ShowDetailRepositoryProtocol {
     func getEpisodes(showId: Int) -> Promise<[Episode]> {
         
         return Promise<[Episode]> { seal in
-            apiManager.request(path: "shows/\(showId)/episodes", method: .get).done { json in
-                let episodes = json.arrayValue.compactMap{ EpisodeMapper.map(from: $0) }
+            apiManager.request(EpisodesRouter.episodes(showId: showId)).done { episodes in
                 seal.fulfill(episodes)
                 }.catch { error in
                     seal.reject(error)

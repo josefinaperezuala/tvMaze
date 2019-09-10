@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Episode {
+class Episode: Decodable {
     var id: Int
     var url: String
     var name: String
@@ -20,7 +20,6 @@ class Episode {
     var runtime: Int
     var image: Image
     var summary: String
-    var links: Links
     
     init(id: Int,
          url: String,
@@ -32,8 +31,7 @@ class Episode {
          airstamp: String,
          runtime: Int,
          image: Image,
-         summary: String,
-         links: Links) {
+         summary: String) {
         
         self.id = id
         self.url = url
@@ -46,7 +44,6 @@ class Episode {
         self.runtime = runtime
         self.image = image
         self.summary = summary
-        self.links = links
     }
     
 }
