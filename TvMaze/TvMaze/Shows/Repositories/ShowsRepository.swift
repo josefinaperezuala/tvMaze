@@ -20,11 +20,27 @@ class ShowsRepository: ShowsRepositoryProtocol {
     let apiManager = APIManager()
     
     func getShows() -> Promise<[Show]> {
-        return getShowsPages()
+        
+        return Promise<[Show]> { seal in
+            apiManager.request(ShowsRouter.shows).done { shows in
+                    seal.fulfill(shows)
+                }.catch { error in
+                    seal.reject(error)
+            }
+        }
+
     }
     
     func getShows(page: String) -> Promise<[Show]> {
-        return getShowsPages(page: page)
+        
+        return Promise<[Show]> { seal in
+            apiManager.request(ShowsRouter.showsPage(page: page)).done { shows in
+                    seal.fulfill(shows)
+                }.catch { error in
+                    seal.reject(error)
+            }
+        }
+
     }
     
     func search(name: String) -> Promise<[Show]> {
@@ -32,18 +48,6 @@ class ShowsRepository: ShowsRepositoryProtocol {
         return Promise<[Show]> { seal in
             apiManager.request(ShowsRouter.search(name: name)).done { shows in
                 seal.fulfill(shows)
-                }.catch { error in
-                    seal.reject(error)
-            }
-        }
-    }
-    
-    private func getShowsPages(page: String? = nil) -> Promise<[Show]> {
-        
-        return Promise<[Show]> { seal in
-            apiManager.request(
-                page != nil ? ShowsRouter.showsPage(page: page ?? "0") : ShowsRouter.shows).done { shows in
-                    seal.fulfill(shows)
                 }.catch { error in
                     seal.reject(error)
             }
