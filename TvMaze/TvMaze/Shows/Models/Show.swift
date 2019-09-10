@@ -18,6 +18,11 @@ struct Image: Decodable {
     let original: String
 }
 
+struct ShowSearchService: Decodable {
+    
+    let show: Show
+}
+
 class Show: Decodable {
     
     let id: Int
@@ -41,6 +46,15 @@ class Show: Decodable {
         self.genres = genres
         self.schedule = schedule
         self.image = image
+    }
+    
+    init(from service: ShowSearchService) {
+        self.id = service.show.id
+        self.url = service.show.url
+        self.name = service.show.name
+        self.genres = service.show.genres
+        self.schedule = service.show.schedule
+        self.image =  service.show.image
     }
 }
 

@@ -7,12 +7,12 @@
 //
 
 import PromiseKit
-import Alamofire
+
 
 protocol ShowsRepositoryProtocol {
     func getShows() -> Promise<[Show]>
     func getShows(page: String) -> Promise<[Show]>
-    func search(name: String) -> Promise<[Show]>
+    func search(name: String) -> Promise<[ShowSearchService]>
 }
 
 class ShowsRepository: ShowsRepositoryProtocol {
@@ -32,23 +32,21 @@ class ShowsRepository: ShowsRepositoryProtocol {
     }
     
     func getShows(page: String) -> Promise<[Show]> {
-        
         return Promise<[Show]> { seal in
             apiManager.request(ShowsRouter.showsPage(page: page)).done { shows in
-                    seal.fulfill(shows)
+                seal.fulfill(shows)
                 }.catch { error in
                     seal.reject(error)
             }
         }
-
     }
     
-    func search(name: String) -> Promise<[Show]> {
+    func search(name: String) -> Promise<[ShowSearchService]> {
         
-        return Promise<[Show]> { seal in
+        return Promise<[ShowSearchService]> { seal in
             apiManager.request(ShowsRouter.search(name: name)).done { shows in
                 seal.fulfill(shows)
-                }.catch { error in
+                }.catch {error in
                     seal.reject(error)
             }
         }

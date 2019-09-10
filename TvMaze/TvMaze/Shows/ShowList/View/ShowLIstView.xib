@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ShowLIstView" customModule="TvMaze" customModuleProvider="target">
             <connections>
+                <outlet property="searchBar" destination="95e-Aa-FvN" id="Ahf-pT-bjj"/>
                 <outlet property="showsTable" destination="F46-AP-HW3" id="JAb-Ad-TKc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,8 +22,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="95e-Aa-FvN">
+                    <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="40h-25-2FV"/>
+                    </connections>
+                </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="F46-AP-HW3">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="6aV-Jy-V23"/>
@@ -32,11 +40,15 @@
             </subviews>
             <constraints>
                 <constraint firstItem="jrS-iS-wXb" firstAttribute="trailing" secondItem="F46-AP-HW3" secondAttribute="trailing" id="DBP-fu-l6r"/>
-                <constraint firstItem="F46-AP-HW3" firstAttribute="top" secondItem="jrS-iS-wXb" secondAttribute="top" id="OkW-Ke-Wbg"/>
+                <constraint firstItem="95e-Aa-FvN" firstAttribute="top" secondItem="jrS-iS-wXb" secondAttribute="top" id="MGg-45-9Ub"/>
+                <constraint firstItem="95e-Aa-FvN" firstAttribute="leading" secondItem="jrS-iS-wXb" secondAttribute="leading" id="MRf-K5-7QH"/>
                 <constraint firstItem="jrS-iS-wXb" firstAttribute="bottom" secondItem="F46-AP-HW3" secondAttribute="bottom" id="gMB-bT-maL"/>
+                <constraint firstItem="F46-AP-HW3" firstAttribute="top" secondItem="95e-Aa-FvN" secondAttribute="bottom" id="hvU-om-uIX"/>
                 <constraint firstItem="F46-AP-HW3" firstAttribute="leading" secondItem="jrS-iS-wXb" secondAttribute="leading" id="oEg-UQ-6Cq"/>
+                <constraint firstItem="95e-Aa-FvN" firstAttribute="trailing" secondItem="jrS-iS-wXb" secondAttribute="trailing" id="qhc-1F-qoQ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="jrS-iS-wXb"/>
+            <point key="canvasLocation" x="138.40000000000001" y="116.49175412293854"/>
         </view>
     </objects>
 </document>

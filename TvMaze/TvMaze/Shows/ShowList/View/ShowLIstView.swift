@@ -3,6 +3,7 @@ import UIKit
 class ShowLIstView: UIViewController, ShowLIstViewProtocol {
 
     @IBOutlet weak var showsTable: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var presenter: ShowLIstPresenterProtocol?
     var shows = [ShowPresentable]()
@@ -13,15 +14,22 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
+        searchBar.showsCancelButton = true
         presenter?.viewDidLoad()
     }
     
-    func setUpTable(){
+    private func setUpTable(){
         showsTable.register(ShowCell.self)
         showsTable.estimatedRowHeight = estimatedRowHeight
         showsTable.rowHeight = UITableView.automaticDimension
     }
     
+    private func cleanSearchBar() {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+    }
+    
+    // MARK: - ShowLIstViewProtocol
     func show(show: [ShowPresentable]) {
         self.shows = show
         showsTable.reloadData()
@@ -47,4 +55,21 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelect(row: indexPath.row)
     }
+}
+
+extension ShowLIstView: UISearchBarDelegate {
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        presenter?.didFinishSearch()
+        cleanSearchBar()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(_ searchBarsd: UISearchBar, textDidChange searchText: String) {
+        presenter?.searchDidChange(search: searchText)
+    }
+
 }
