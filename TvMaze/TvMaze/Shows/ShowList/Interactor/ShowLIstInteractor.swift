@@ -26,7 +26,6 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
     func getShows(page: Int) {
         repository.getShows(page: String(describing: page)).done { shows in
             self.presenter?.didLoadShows(shows: shows)
-            print("LOADED PAGE \(page)") 
             }.catch { error in
                 self.presenter?.didFail(error: error)
         }
