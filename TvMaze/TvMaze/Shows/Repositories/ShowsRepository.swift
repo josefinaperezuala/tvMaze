@@ -49,15 +49,4 @@ class ShowsRepository: ShowsRepositoryProtocol {
             }
         }
     }
-    
-    func search(name: String) -> Promise<[Show]> {
-        
-        return Promise<[Show]> { seal in
-            apiManager.request(ShowsRouter.search(name: name)).done { shows in
-                seal.fulfill(shows)
-                }.catch { error in
-                    seal.reject(error)
-            }
-        }
-    }
 }
