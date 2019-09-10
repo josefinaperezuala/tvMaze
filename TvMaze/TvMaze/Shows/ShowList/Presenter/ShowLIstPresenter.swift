@@ -9,9 +9,11 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     var shows: [Show] = []
     var showsFiltered: [Show] = []
     var searchIsActive: Bool = false
+    var currentPage = 0
     
-    func viewDidLoad() {
-        interactor?.getShows()
+    func loadShows() {
+        interactor?.getShows(page: currentPage)
+        currentPage += 1
     }
     
     func didGet(shows: [Show]) {
@@ -41,6 +43,11 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     func didGetSearchResults(shows: [Show]) {
         showsFiltered = shows
         view?.show(show: showsFiltered.map({ ShowPresentable(show: $0) }))
+    }
+    
+    func didLoadShows(shows: [Show]) {
+        self.shows.append(contentsOf: shows)
+        reloadViewWithShows()
     }
     
     private func reloadViewWithShows() {

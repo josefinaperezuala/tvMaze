@@ -26,7 +26,7 @@ enum ShowsRouter: APIConfiguration {
         case .shows:
             return "shows"
         case .showsPage(let page):
-            return "shows\(page)"
+            return "shows?page=\(page)"
         case .search(let name):
             return "search/shows?q=" + name
         }
