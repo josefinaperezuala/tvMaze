@@ -11,7 +11,7 @@ import Alamofire
 
 enum EpisodesRouter: APIConfiguration {
     
-    case episodes(showId: Int)
+    case episodes(showId : Int)
     
     // MARK: - HTTPMethod
     var method: HTTPMethod {

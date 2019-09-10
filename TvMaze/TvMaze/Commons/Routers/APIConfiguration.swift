@@ -19,11 +19,9 @@ protocol APIConfiguration: URLRequestConvertible {
 extension APIConfiguration {
     
     func asURLRequest() throws -> URLRequest {
-        let url = try Constants.baseUrl.asURL()
         
-        let urlString = url.absoluteString + path
+        let urlString = Constants.baseUrl + path
         var urlRequest = URLRequest(url: URL(string: urlString)!)
-        
         // HTTP Method
         urlRequest.httpMethod = method.rawValue
         
