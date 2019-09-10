@@ -15,4 +15,12 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
                 
         }
     }
+    
+    func searchShows(name: String) {
+        repository.search(name: name).done { shows in
+            self.presenter?.didGetSearchResults(shows: shows.compactMap{ Show(from: $0)})
+            }.catch { error in
+
+        }
+    }
 }

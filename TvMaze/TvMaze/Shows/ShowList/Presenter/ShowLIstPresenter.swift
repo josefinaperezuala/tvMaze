@@ -1,7 +1,7 @@
 import UIKit
 
 class ShowLIstPresenter: ShowLIstPresenterProtocol {
-   
+    
     weak var view: ShowLIstViewProtocol?
     var interactor: ShowLIstInteractorProtocol?
     var router: ShowLIstRouterProtocol?
@@ -30,13 +30,17 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     
     func searchDidChange(search: String) {
         searchIsActive = true
-        showsFiltered = shows.filter{ $0.name.contains(search)}
-        view?.show(show: showsFiltered.map({ ShowPresentable(show: $0) }))
+        interactor?.searchShows(name: search)
     }
     
     func didFinishSearch() {
         searchIsActive = false
         reloadViewWithShows()
+    }
+    
+    func didGetSearchResults(shows: [Show]) {
+        showsFiltered = shows
+        view?.show(show: showsFiltered.map({ ShowPresentable(show: $0) }))
     }
     
     private func reloadViewWithShows() {

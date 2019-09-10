@@ -13,6 +13,7 @@ protocol ShowLIstPresenterProtocol: class {
     func didSelect(row: Int)
     func searchDidChange(search: String)
     func didFinishSearch()
+    func didGetSearchResults(shows: [Show])
 }
 
 
@@ -21,6 +22,7 @@ protocol ShowLIstInteractorProtocol: class {
     var presenter: ShowLIstPresenterProtocol?  { get set }
     
     func getShows()
+    func searchShows(name: String)
 }
 
 
