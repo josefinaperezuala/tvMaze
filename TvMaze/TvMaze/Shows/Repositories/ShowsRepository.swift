@@ -46,6 +46,8 @@ class ShowsRepository: ShowsRepositoryProtocol {
         return Promise<[ShowSearchService]> { seal in
             apiManager.request(ShowsRouter.search(name: name)).done { shows in
                 seal.fulfill(shows)
+                }.catch {error in
+                    seal.reject(error)
             }
         }
     }
