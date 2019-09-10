@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		39F7DC64E1CC9C99F71469BD /* libPods-TvMaze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99DDD3E23219C9B005F049D /* libPods-TvMaze.a */; };
 		43B76D65E54889AA17172762 /* libPods-TvMazeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F21481784AB759F6A05030E0 /* libPods-TvMazeTests.a */; };
+		D99DCAA323282158002EB820 /* PeopleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9523282158002EB820 /* PeopleListPresenter.swift */; };
+		D99DCAA423282158002EB820 /* PeopleListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9623282158002EB820 /* PeopleListProtocols.swift */; };
+		D99DCAA523282158002EB820 /* PeopleListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DCA9823282158002EB820 /* PeopleListView.xib */; };
+		D99DCAA623282158002EB820 /* PeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9923282158002EB820 /* PeopleListView.swift */; };
+		D99DCAA723282158002EB820 /* PeopleListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9E23282158002EB820 /* PeopleListInteractor.swift */; };
+		D99DCAA823282158002EB820 /* PeopleListModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCAA023282158002EB820 /* PeopleListModule.swift */; };
+		D99DCAA923282158002EB820 /* PeopleListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCAA223282158002EB820 /* PeopleListRouter.swift */; };
 		D99DDCF3232136C1005F049D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDCF2232136C1005F049D /* Constants.swift */; };
 		D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DDD0D23214985005F049D /* ShowLIstPresenter.swift */; };
 		D99DDD1823214985005F049D /* ShowLIstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DDD0F23214985005F049D /* ShowLIstView.xib */; };
@@ -63,6 +70,13 @@
 		05AEF95F30154FD16CFECC8E /* Pods-TvMaze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMaze.release.xcconfig"; path = "Target Support Files/Pods-TvMaze/Pods-TvMaze.release.xcconfig"; sourceTree = "<group>"; };
 		39A77E6C40431FED63343F37 /* Pods-TvMaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMaze.debug.xcconfig"; path = "Target Support Files/Pods-TvMaze/Pods-TvMaze.debug.xcconfig"; sourceTree = "<group>"; };
 		A23C1B6FD38A3A1A355D2750 /* Pods-TvMazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMazeTests.release.xcconfig"; path = "Target Support Files/Pods-TvMazeTests/Pods-TvMazeTests.release.xcconfig"; sourceTree = "<group>"; };
+		D99DCA9523282158002EB820 /* PeopleListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListPresenter.swift; sourceTree = "<group>"; };
+		D99DCA9623282158002EB820 /* PeopleListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListProtocols.swift; sourceTree = "<group>"; };
+		D99DCA9823282158002EB820 /* PeopleListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleListView.xib; sourceTree = "<group>"; };
+		D99DCA9923282158002EB820 /* PeopleListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListView.swift; sourceTree = "<group>"; };
+		D99DCA9E23282158002EB820 /* PeopleListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListInteractor.swift; sourceTree = "<group>"; };
+		D99DCAA023282158002EB820 /* PeopleListModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListModule.swift; sourceTree = "<group>"; };
+		D99DCAA223282158002EB820 /* PeopleListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListRouter.swift; sourceTree = "<group>"; };
 		D99DDCF2232136C1005F049D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D99DDD0D23214985005F049D /* ShowLIstPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowLIstPresenter.swift; sourceTree = "<group>"; };
 		D99DDD0F23214985005F049D /* ShowLIstView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowLIstView.xib; sourceTree = "<group>"; };
@@ -150,6 +164,84 @@
 				A23C1B6FD38A3A1A355D2750 /* Pods-TvMazeTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D99DCA2D232816FE002EB820 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCAA023282158002EB820 /* PeopleListModule.swift */,
+				D99DCA9623282158002EB820 /* PeopleListProtocols.swift */,
+				D99DCA9A23282158002EB820 /* Interactor */,
+				D99DCA9423282158002EB820 /* Presenter */,
+				D99DCAA123282158002EB820 /* Router */,
+				D99DCA9723282158002EB820 /* View */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		D99DCA9423282158002EB820 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCA9523282158002EB820 /* PeopleListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D99DCA9723282158002EB820 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCA9823282158002EB820 /* PeopleListView.xib */,
+				D99DCA9923282158002EB820 /* PeopleListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D99DCA9A23282158002EB820 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCA9B23282158002EB820 /* Presenter */,
+				D99DCA9C23282158002EB820 /* View */,
+				D99DCA9D23282158002EB820 /* Interactor */,
+				D99DCA9E23282158002EB820 /* PeopleListInteractor.swift */,
+				D99DCA9F23282158002EB820 /* Router */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D99DCA9B23282158002EB820 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D99DCA9C23282158002EB820 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D99DCA9D23282158002EB820 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		D99DCA9F23282158002EB820 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D99DCAA123282158002EB820 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D99DCAA223282158002EB820 /* PeopleListRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		D99DDCF623214590005F049D /* Shows */ = {
@@ -371,6 +463,7 @@
 		D9DCB070231FFA2B00724331 /* TvMaze */ = {
 			isa = PBXGroup;
 			children = (
+				D99DCA2D232816FE002EB820 /* People */,
 				D9B6A1B22322D11D00C24FFA /* Commons */,
 				D99DDD31232189DB005F049D /* Extensions */,
 				D99DDCF623214590005F049D /* Shows */,
@@ -493,6 +586,7 @@
 				D99DDD672321A28D005F049D /* ShowDetailView.xib in Resources */,
 				D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */,
 				D9B6A19823228C2600C24FFA /* Storyboard.storyboard in Resources */,
+				D99DCAA523282158002EB820 /* PeopleListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,7 +653,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D9B6A1AD2322BA8700C24FFA /* ShowDetailRepository.swift in Sources */,
+				D99DCAA723282158002EB820 /* PeopleListInteractor.swift in Sources */,
 				D99DDD1923214985005F049D /* ShowLIstView.swift in Sources */,
+				D99DCAA923282158002EB820 /* PeopleListRouter.swift in Sources */,
 				D99DDD3723218E83005F049D /* ShowPresentable.swift in Sources */,
 				D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */,
 				D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */,
@@ -571,18 +667,22 @@
 				D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */,
 				D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */,
 				D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */,
+				D99DCAA623282158002EB820 /* PeopleListView.swift in Sources */,
 				D9B6A1A12322A1AC00C24FFA /* EpisodePresentable.swift in Sources */,
 				D9B6A1A92322A35100C24FFA /* EpisodeCell.swift in Sources */,
 				D9D7DBAB2326A8C800837B2D /* APIConfiguration.swift in Sources */,
 				D9B6A19A23229B1A00C24FFA /* Episode.swift in Sources */,
 				D99DDD682321A28D005F049D /* ShowDetailView.swift in Sources */,
 				D99DDD662321A28D005F049D /* ShowDetailProtocols.swift in Sources */,
+				D99DCAA823282158002EB820 /* PeopleListModule.swift in Sources */,
 				D99DDD1723214985005F049D /* ShowLIstPresenter.swift in Sources */,
 				D9B6A1B12322CF5E00C24FFA /* ShowsRouter.swift in Sources */,
+				D99DCAA323282158002EB820 /* PeopleListPresenter.swift in Sources */,
 				D9DCB072231FFA2B00724331 /* AppDelegate.swift in Sources */,
 				D99DDD6B2321A28D005F049D /* ShowDetailRouter.swift in Sources */,
 				D9DCB088232015D900724331 /* Show.swift in Sources */,
 				D9D7DBAD2326A95100837B2D /* EpisodesRouter.swift in Sources */,
+				D99DCAA423282158002EB820 /* PeopleListProtocols.swift in Sources */,
 				D99DDD652321A28D005F049D /* ShowDetailPresenter.swift in Sources */,
 				D99DDD33232189EF005F049D /* UITableView.swift in Sources */,
 				D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */,

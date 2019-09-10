@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         
         let tabBar = UITabBarController()
-        tabBar.viewControllers = [ShowLIstModule.build()]
+        tabBar.viewControllers = [ShowLIstModule.build(), PeopleListModule.build()]
         window?.rootViewController = tabBar
         window?.makeKeyAndVisible()
         return true
