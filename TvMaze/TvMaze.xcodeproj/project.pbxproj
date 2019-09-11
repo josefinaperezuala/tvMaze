@@ -67,6 +67,8 @@
 		D9FDFF542329739400E0832E /* PersonDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4C2329739400E0832E /* PersonDetailRouter.swift */; };
 		D9FDFF552329739400E0832E /* PersonDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4E2329739400E0832E /* PersonDetailInteractor.swift */; };
 		D9FDFF562329739400E0832E /* PersonDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4F2329739400E0832E /* PersonDetailModule.swift */; };
+		D9FDFF58232977BC00E0832E /* CastCreditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF57232977BC00E0832E /* CastCreditRouter.swift */; };
+		D9FDFF5A2329789800E0832E /* PersonDetailRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF592329789800E0832E /* PersonDetailRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +148,8 @@
 		D9FDFF4C2329739400E0832E /* PersonDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailRouter.swift; sourceTree = "<group>"; };
 		D9FDFF4E2329739400E0832E /* PersonDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailInteractor.swift; sourceTree = "<group>"; };
 		D9FDFF4F2329739400E0832E /* PersonDetailModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailModule.swift; sourceTree = "<group>"; };
+		D9FDFF57232977BC00E0832E /* CastCreditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastCreditRouter.swift; sourceTree = "<group>"; };
+		D9FDFF592329789800E0832E /* PersonDetailRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailRepository.swift; sourceTree = "<group>"; };
 		E81CF5AA95EA35C56F58429A /* Pods-TvMazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMazeTests.debug.xcconfig"; path = "Target Support Files/Pods-TvMazeTests/Pods-TvMazeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F21481784AB759F6A05030E0 /* libPods-TvMazeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMazeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BF11F5699CF5AF66CC4924 /* libPods-TvMaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				D99DCAB223282794002EB820 /* PeopleListRepository.swift */,
+				D9FDFF592329789800E0832E /* PersonDetailRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -484,6 +489,7 @@
 				D9D7DBAC2326A95100837B2D /* EpisodesRouter.swift */,
 				D9B6A1B02322CF5E00C24FFA /* ShowsRouter.swift */,
 				D99DCAB4232828CF002EB820 /* PeopleRouter.swift */,
+				D9FDFF57232977BC00E0832E /* CastCreditRouter.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -762,10 +768,12 @@
 				D9B6A1AD2322BA8700C24FFA /* ShowDetailRepository.swift in Sources */,
 				D99DCAB0232824A2002EB820 /* Person.swift in Sources */,
 				D99DCAA723282158002EB820 /* PeopleListInteractor.swift in Sources */,
+				D9FDFF5A2329789800E0832E /* PersonDetailRepository.swift in Sources */,
 				D99DDD1923214985005F049D /* ShowLIstView.swift in Sources */,
 				D99DCAA923282158002EB820 /* PeopleListRouter.swift in Sources */,
 				D99DDD3723218E83005F049D /* ShowPresentable.swift in Sources */,
 				D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */,
+				D9FDFF58232977BC00E0832E /* CastCreditRouter.swift in Sources */,
 				D99DCAB5232828CF002EB820 /* PeopleRouter.swift in Sources */,
 				D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */,
 				D9FDFF512329739400E0832E /* PersonDetailPresenter.swift in Sources */,

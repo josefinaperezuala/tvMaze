@@ -7,5 +7,12 @@ class PersonDetailView: UIViewController, PersonDetailViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    func show(person: PersonPresentable) {
+        
+    }
+    
+    func show(shows: [ShowPresentable]) {
+        
+    }
 }
