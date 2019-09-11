@@ -56,5 +56,14 @@ class Show: Decodable {
         self.schedule = service.show.schedule
         self.image =  service.show.image
     }
+    
+    init(from service: CastCreditService) {
+        self.id = service.showInfo.show.id
+        self.url = service.showInfo.show.url
+        self.name = service.showInfo.show.name
+        self.genres = service.showInfo.show.genres
+        self.schedule = service.showInfo.show.schedule
+        self.image = service.showInfo.show.image
+    }
 }
 

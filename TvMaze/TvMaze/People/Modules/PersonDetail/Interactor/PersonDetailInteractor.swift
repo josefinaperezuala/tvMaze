@@ -8,9 +8,9 @@ class PersonDetailInteractor: PersonDetailInteractorProtocol {
     
     func getCastCredits(personId: Int) {
         repository.shows(personId: personId).done { shows in
-            self.presenter?.didGetCastCredits(shows: shows)
+            self.presenter?.didGetCastCredits(shows: shows.compactMap{ Show(from: $0) })
             }.catch { error in
-                
+                print(error.localizedDescription)
         }
     }
 }

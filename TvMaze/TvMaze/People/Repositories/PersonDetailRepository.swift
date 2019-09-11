@@ -9,7 +9,7 @@
 import PromiseKit
 
 protocol PersonDetailRepositoryProtocol {
-    func shows(personId: Int) -> Promise<[Show]>
+    func shows(personId: Int) -> Promise<[CastCreditService]>
 }
 
 
@@ -17,8 +17,8 @@ class PersonDetailRepository: PersonDetailRepositoryProtocol {
     
     var apiManager = APIManager()
     
-    func shows(personId: Int) -> Promise<[Show]> {
-        return Promise<[Show]> { seal in
+    func shows(personId: Int) -> Promise<[CastCreditService]> {
+        return Promise<[CastCreditService]> { seal in
             apiManager.request(CastCreditRouter.shows(personId: personId)).done { shows in
                 seal.fulfill(shows)
                 }.catch { error in

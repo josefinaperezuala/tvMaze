@@ -12,6 +12,14 @@ struct PersonSearchService: Decodable {
     var person: Person
 }
 
+struct CastCreditService: Decodable {
+    var showInfo: ShowSearchService
+    
+    private enum CodingKeys: String, CodingKey {
+        case showInfo = "_embedded"
+    }
+}
+
 class Person: Decodable {
     
     var id: Int

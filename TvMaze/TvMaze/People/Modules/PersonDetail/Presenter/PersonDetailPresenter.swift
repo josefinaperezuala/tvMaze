@@ -13,6 +13,7 @@ class PersonDetailPresenter: PersonDetailPresenterProtocol {
             return
         }
         view?.show(person: PersonPresentable(person: person))
+        interactor?.getCastCredits(personId: person.id)
     }
     
     func didGetCastCredits(shows: [Show]) {

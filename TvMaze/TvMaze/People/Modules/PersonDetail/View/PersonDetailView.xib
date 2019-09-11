@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="birthdayLbl" destination="009-4c-yZ5" id="CY8-wu-Hhe"/>
                 <outlet property="personImg" destination="Neg-61-fH2" id="ldq-O7-ymE"/>
+                <outlet property="showsTable" destination="uin-kO-871" id="wC6-Tk-OOR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,6 +43,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uin-kO-871">
                     <rect key="frame" x="20" y="515" width="335" height="132"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dPm-dv-jry"/>
+                        <outlet property="delegate" destination="-1" id="qm2-r7-mJG"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
