@@ -6,13 +6,17 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     var interactor: ShowLIstInteractorProtocol?
     var router: ShowLIstRouterProtocol?
     
-    var shows: [Show] = []
-    var showsFiltered: [Show] = []
-    var searchIsActive: Bool = false
-    var currentPage = 0
+    private var shows: [Show] = []
+    private var showsFiltered: [Show] = []
+    private var searchIsActive: Bool = false
+    private var currentPage = 0
+    private var waitingResults = false
     
     func loadShows() {
-        interactor?.getShows(page: currentPage)
+        if !waitingResults {
+            interactor?.getShows(page: currentPage)
+            waitingResults = true
+        }
         currentPage += 1
     }
     
@@ -46,6 +50,7 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     }
     
     func didLoadShows(shows: [Show]) {
+        waitingResults = false
         self.shows.append(contentsOf: shows)
         reloadViewWithShows()
     }

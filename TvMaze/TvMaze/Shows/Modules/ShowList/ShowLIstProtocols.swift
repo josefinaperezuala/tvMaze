@@ -5,8 +5,6 @@ protocol ShowLIstRouterProtocol: class {
 }
 
 protocol ShowLIstPresenterProtocol: class {
-    
-    var searchIsActive: Bool { get set }
     func didGet(shows: [Show])
     func didFail(error: Error)
     func didSelect(row: Int)
