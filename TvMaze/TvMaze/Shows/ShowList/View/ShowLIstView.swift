@@ -56,11 +56,7 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        guard let waitingResults = presenter?.waitingResults else {
-            return
-        }
-        
-        if !waitingResults && indexPath.row == shows.count - 1 {
+        if indexPath.row == shows.count - 1 {
             presenter?.loadShows()
         }
     }
