@@ -3,7 +3,6 @@ import PromiseKit
 
 class ShowLIstInteractor: ShowLIstInteractorProtocol {
     
-    
     weak var presenter: ShowLIstPresenterProtocol?
     
     var repository: ShowsRepositoryProtocol = ShowsRepository()
@@ -12,7 +11,7 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
         repository.getShows().done { shows in
             self.presenter?.didGet(shows: shows)
             }.catch { error in
-                
+                self.presenter?.didFail(error: error)
         }
     }
     
@@ -21,6 +20,14 @@ class ShowLIstInteractor: ShowLIstInteractorProtocol {
             self.presenter?.didGetSearchResults(shows: shows.compactMap{ Show(from: $0)})
             }.catch { error in
 
+        }
+    }
+    
+    func getShows(page: Int) {
+        repository.getShows(page: String(describing: page)).done { shows in
+            self.presenter?.didLoadShows(shows: shows)
+            }.catch { error in
+                self.presenter?.didFail(error: error)
         }
     }
 }

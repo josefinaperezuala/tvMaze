@@ -8,14 +8,13 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     var presenter: ShowLIstPresenterProtocol?
     var shows = [ShowPresentable]()
     
-    let showCellIdentifier = "ShowCell"
     let estimatedRowHeight: CGFloat = 110
     
 	override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
         searchBar.showsCancelButton = true
-        presenter?.viewDidLoad()
+        presenter?.loadShows()
     }
     
     private func setUpTable(){
@@ -54,6 +53,12 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         presenter?.didSelect(row: indexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == shows.count - 1 {
+            presenter?.loadShows()
+        }
     }
 }
 
