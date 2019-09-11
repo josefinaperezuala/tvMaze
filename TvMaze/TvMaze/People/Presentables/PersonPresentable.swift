@@ -11,10 +11,13 @@ import Foundation
 struct PersonPresentable {
     
     var name: String
-    var imageUrl: String?
+    var imageUrl: URL?
     
     init(person: Person) {
         self.name = person.name
-        self.imageUrl = person.image?.original
+        if let urlString = person.image?.original {
+            self.imageUrl = URL(string: urlString)
+        }
+        
     }
 }

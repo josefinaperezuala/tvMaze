@@ -8,7 +8,7 @@ class PeopleListView: UIViewController, PeopleListViewProtocol {
     var presenter: PeopleListPresenterProtocol?
     var people: [PersonPresentable] = []
     
-    let estimatedRowHeight: CGFloat = 44
+    let estimatedRowHeight: CGFloat = 87
     
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,11 +28,6 @@ class PeopleListView: UIViewController, PeopleListViewProtocol {
 }
 
 extension PeopleListView: UISearchBarDelegate {
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        presenter?.didFinishSearch()
-//        cleanSearchBar()
-    }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
