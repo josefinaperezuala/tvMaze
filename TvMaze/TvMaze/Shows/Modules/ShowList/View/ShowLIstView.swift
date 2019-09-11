@@ -8,7 +8,6 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     var presenter: ShowLIstPresenterProtocol?
     var shows = [ShowPresentable]()
     
-    let showCellIdentifier = "ShowCell"
     let estimatedRowHeight: CGFloat = 110
     
 	override func viewDidLoad() {

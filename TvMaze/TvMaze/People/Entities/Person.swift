@@ -17,10 +17,10 @@ class Person: Decodable {
     var id: Int
     var url: String
     var name: String
-    var birthday: String
+    var birthday: String?
     var deathday: String?
-    var gender: String
-    var image: Image
+    var gender: String?
+    var image: Image?
     
     init(from service: PersonSearchService) {
         self.id = service.person.id

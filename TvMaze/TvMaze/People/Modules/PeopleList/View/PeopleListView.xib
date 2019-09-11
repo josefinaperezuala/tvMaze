@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PeopleListView" customModule="TvMaze" customModuleProvider="target">
             <connections>
+                <outlet property="peopleTable" destination="3Yk-EA-19w" id="7mR-Gc-Htt"/>
                 <outlet property="searchBar" destination="eSI-yY-aPZ" id="z5J-GT-EsO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -31,6 +32,10 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Yk-EA-19w">
                     <rect key="frame" x="0.0" y="76" width="375" height="591"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="n7s-UR-hOo"/>
+                        <outlet property="delegate" destination="-1" id="PHq-Ag-xtf"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
