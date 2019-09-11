@@ -12,9 +12,11 @@ struct PersonPresentable {
     
     var name: String
     var imageUrl: URL?
+    var birthday: String
     
     init(person: Person) {
         self.name = person.name
+        self.birthday = "\(person.birthday ?? "")"
         if let urlString = person.image?.original {
             self.imageUrl = URL(string: urlString)
         }
