@@ -7,7 +7,6 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     
     var presenter: ShowLIstPresenterProtocol?
     var shows = [ShowPresentable]()
-    var waitingResults = false
     
     let estimatedRowHeight: CGFloat = 110
     
@@ -31,7 +30,6 @@ class ShowLIstView: UIViewController, ShowLIstViewProtocol {
     
     // MARK: - ShowLIstViewProtocol
     func show(show: [ShowPresentable]) {
-        waitingResults = false
         self.shows = show
         showsTable.reloadData()
     }
@@ -58,8 +56,11 @@ extension ShowLIstView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let waitingResults = presenter?.waitingResults else {
+            return
+        }
+        
         if !waitingResults && indexPath.row == shows.count - 1 {
-            waitingResults = true
             presenter?.loadShows()
         }
     }

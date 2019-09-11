@@ -10,8 +10,10 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     var showsFiltered: [Show] = []
     var searchIsActive: Bool = false
     var currentPage = 0
+    var waitingResults = false
     
     func loadShows() {
+        waitingResults = true
         interactor?.getShows(page: currentPage)
         currentPage += 1
     }
@@ -46,6 +48,7 @@ class ShowLIstPresenter: ShowLIstPresenterProtocol {
     }
     
     func didLoadShows(shows: [Show]) {
+        waitingResults = false
         self.shows.append(contentsOf: shows)
         reloadViewWithShows()
     }
