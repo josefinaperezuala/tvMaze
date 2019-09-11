@@ -60,6 +60,13 @@
 		D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9DCB08923202D4C00724331 /* ViewController.swift */; };
 		D9FDFF362329282A00E0832E /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF342329282A00E0832E /* PersonCell.swift */; };
 		D9FDFF372329282A00E0832E /* PersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FDFF352329282A00E0832E /* PersonCell.xib */; };
+		D9FDFF502329739400E0832E /* PersonDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF452329739400E0832E /* PersonDetailProtocols.swift */; };
+		D9FDFF512329739400E0832E /* PersonDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF472329739400E0832E /* PersonDetailPresenter.swift */; };
+		D9FDFF522329739400E0832E /* PersonDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D9FDFF492329739400E0832E /* PersonDetailView.xib */; };
+		D9FDFF532329739400E0832E /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4A2329739400E0832E /* PersonDetailView.swift */; };
+		D9FDFF542329739400E0832E /* PersonDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4C2329739400E0832E /* PersonDetailRouter.swift */; };
+		D9FDFF552329739400E0832E /* PersonDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4E2329739400E0832E /* PersonDetailInteractor.swift */; };
+		D9FDFF562329739400E0832E /* PersonDetailModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9FDFF4F2329739400E0832E /* PersonDetailModule.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +139,13 @@
 		D9DCB08923202D4C00724331 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D9FDFF342329282A00E0832E /* PersonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 		D9FDFF352329282A00E0832E /* PersonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonCell.xib; sourceTree = "<group>"; };
+		D9FDFF452329739400E0832E /* PersonDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailProtocols.swift; sourceTree = "<group>"; };
+		D9FDFF472329739400E0832E /* PersonDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailPresenter.swift; sourceTree = "<group>"; };
+		D9FDFF492329739400E0832E /* PersonDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonDetailView.xib; sourceTree = "<group>"; };
+		D9FDFF4A2329739400E0832E /* PersonDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		D9FDFF4C2329739400E0832E /* PersonDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailRouter.swift; sourceTree = "<group>"; };
+		D9FDFF4E2329739400E0832E /* PersonDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailInteractor.swift; sourceTree = "<group>"; };
+		D9FDFF4F2329739400E0832E /* PersonDetailModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonDetailModule.swift; sourceTree = "<group>"; };
 		E81CF5AA95EA35C56F58429A /* Pods-TvMazeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMazeTests.debug.xcconfig"; path = "Target Support Files/Pods-TvMazeTests/Pods-TvMazeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F21481784AB759F6A05030E0 /* libPods-TvMazeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMazeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BF11F5699CF5AF66CC4924 /* libPods-TvMaze.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TvMaze.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,6 +262,7 @@
 		D99DCAAC23282447002EB820 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D9FDFF382329736500E0832E /* PersonDetail */,
 				D99DCAAA23282422002EB820 /* PeopleList */,
 			);
 			path = Modules;
@@ -530,6 +545,52 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D9FDFF382329736500E0832E /* PersonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D9FDFF4D2329739400E0832E /* Interactor */,
+				D9FDFF4F2329739400E0832E /* PersonDetailModule.swift */,
+				D9FDFF452329739400E0832E /* PersonDetailProtocols.swift */,
+				D9FDFF462329739400E0832E /* Presenter */,
+				D9FDFF4B2329739400E0832E /* Router */,
+				D9FDFF482329739400E0832E /* View */,
+			);
+			path = PersonDetail;
+			sourceTree = "<group>";
+		};
+		D9FDFF462329739400E0832E /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D9FDFF472329739400E0832E /* PersonDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		D9FDFF482329739400E0832E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D9FDFF492329739400E0832E /* PersonDetailView.xib */,
+				D9FDFF4A2329739400E0832E /* PersonDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D9FDFF4B2329739400E0832E /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				D9FDFF4C2329739400E0832E /* PersonDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		D9FDFF4D2329739400E0832E /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				D9FDFF4E2329739400E0832E /* PersonDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -626,6 +687,7 @@
 				D9B6A1AA2322A35100C24FFA /* EpisodeCell.xib in Resources */,
 				D9FDFF372329282A00E0832E /* PersonCell.xib in Resources */,
 				D99DDD1823214985005F049D /* ShowLIstView.xib in Resources */,
+				D9FDFF522329739400E0832E /* PersonDetailView.xib in Resources */,
 				D99DDD3023217ABF005F049D /* ShowCell.xib in Resources */,
 				D99DDD672321A28D005F049D /* ShowDetailView.xib in Resources */,
 				D9DCB079231FFA2C00724331 /* Assets.xcassets in Resources */,
@@ -696,6 +758,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9FDFF552329739400E0832E /* PersonDetailInteractor.swift in Sources */,
 				D9B6A1AD2322BA8700C24FFA /* ShowDetailRepository.swift in Sources */,
 				D99DCAB0232824A2002EB820 /* Person.swift in Sources */,
 				D99DCAA723282158002EB820 /* PeopleListInteractor.swift in Sources */,
@@ -705,12 +768,15 @@
 				D99DDD1D23214985005F049D /* ShowLIstRouter.swift in Sources */,
 				D99DCAB5232828CF002EB820 /* PeopleRouter.swift in Sources */,
 				D9DCB08A23202D4C00724331 /* ViewController.swift in Sources */,
+				D9FDFF512329739400E0832E /* PersonDetailPresenter.swift in Sources */,
 				D99DDD6A2321A28D005F049D /* ShowDetailInteractor.swift in Sources */,
+				D9FDFF562329739400E0832E /* PersonDetailModule.swift in Sources */,
 				D9DCB0862320039D00724331 /* APIManager.swift in Sources */,
 				D99DDCF3232136C1005F049D /* Constants.swift in Sources */,
 				D99DDD692321A28D005F049D /* ShowDetailModule.swift in Sources */,
 				D99DDD1C23214985005F049D /* ShowLIstInteractor.swift in Sources */,
 				D99DDD3523218A61005F049D /* UITableViewCell.swift in Sources */,
+				D9FDFF502329739400E0832E /* PersonDetailProtocols.swift in Sources */,
 				D99DDD1B23214985005F049D /* ShowLIstModule.swift in Sources */,
 				D99DDD1A23214985005F049D /* ShowLIstProtocols.swift in Sources */,
 				D99DCAA623282158002EB820 /* PeopleListView.swift in Sources */,
@@ -732,10 +798,12 @@
 				D9D7DBAD2326A95100837B2D /* EpisodesRouter.swift in Sources */,
 				D99DCAA423282158002EB820 /* PeopleListProtocols.swift in Sources */,
 				D99DDD652321A28D005F049D /* ShowDetailPresenter.swift in Sources */,
+				D9FDFF542329739400E0832E /* PersonDetailRouter.swift in Sources */,
 				D99DDD33232189EF005F049D /* UITableView.swift in Sources */,
 				D99DCAB323282794002EB820 /* PeopleListRepository.swift in Sources */,
 				D9DCB0842320027900724331 /* ShowsRepository.swift in Sources */,
 				D99DDD2F23217ABF005F049D /* ShowCell.swift in Sources */,
+				D9FDFF532329739400E0832E /* PersonDetailView.swift in Sources */,
 				D99DDD6D2321A809005F049D /* ShowDetailPresentable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
