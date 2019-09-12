@@ -7,6 +7,7 @@ class PersonDetailPresenter: PersonDetailPresenterProtocol {
     var router: PersonDetailRouterProtocol?
     
     var person: Person?
+    var shows: [Show] = []
     
     func viewDidLoad() {
         guard let person = person else {
@@ -17,6 +18,11 @@ class PersonDetailPresenter: PersonDetailPresenterProtocol {
     }
     
     func didGetCastCredits(shows: [Show]) {
+        self.shows = shows
         view?.show(shows: shows.compactMap { ShowPresentable(show: $0) })
+    }
+    
+    func didSelect(row: Int) {
+        router?.showDetail(show: shows[row])
     }
 }
