@@ -82,6 +82,28 @@ class ShowListTest: XCTestCase {
         
         wait(for: [expectation], timeout: 5)
     }
+    
+    func testPagination() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Shows count should increment when reaching the end of the table")
+        
+        //act
+        view.loadViewIfNeeded()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+           
+            let showsInitialCount = self.view.shows.count
+            self.view.tableView(self.view.showsTable, willDisplay: ShowCell(), forRowAt: IndexPath(row: showsInitialCount - 1, section: 0))
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute:{
+                //assert
+                expectation.fulfill()
+                XCTAssertTrue(showsInitialCount < self.view.shows.count)
+            })
+        })
+        
+        wait(for: [expectation], timeout: 5)
+    }
 }
 
 class ShowMockRepository: ShowsRepositoryProtocol {
