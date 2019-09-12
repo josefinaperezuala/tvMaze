@@ -51,6 +51,10 @@ extension PeopleListView: UITableViewDelegate, UITableViewDataSource {
         return personCell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.didSelect(row: indexPath.row)
+    }
+    
 }
 
 
