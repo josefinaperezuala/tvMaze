@@ -28,19 +28,20 @@ class ShowDetailTest: XCTestCase {
         interactor.presenter = presenter
         interactor.repository = ShowDetailMockRepository()
         router.viewController = view
+        
+        view.loadViewIfNeeded()
     }
     
     func testEpisodesCount() {
         //arrange
-        let expectacion = XCTestExpectation(description: "Episodes count should be 1")
+        let expectacion = XCTestExpectation(description: "Episodes count is 1")
             
         //act
-        view.loadViewIfNeeded()
         
         //assert
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectacion.fulfill()
-            XCTAssertTrue(self.view.episodes.count == 1)
+            XCTAssertEqual(self.view.episodes.count, 1)
         })
         
         wait(for: [expectacion], timeout: TestConstants.timeout)
@@ -48,17 +49,16 @@ class ShowDetailTest: XCTestCase {
     
     func testTextFormat() {
         //arrange
-        let expectation = XCTestExpectation(description: "Genres and schedule should be formatted properly")
+        let expectation = XCTestExpectation(description: "Genres and schedule is formatted properly")
         
         //act
-        view.loadViewIfNeeded()
         
         //assert
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
-            XCTAssertTrue(self.view.genresLbl.text == "Action | Crime | Science-Fiction")
-            XCTAssertTrue(self.view.scheduleLbl.text == "Monday, Tuesday at 22:00 hs.")
-            XCTAssertTrue(self.view.title == "Arrow")
+            XCTAssertEqual(self.view.genresLbl.text, "Action | Crime | Science-Fiction")
+            XCTAssertEqual(self.view.scheduleLbl.text, "Monday, Tuesday at 22:00 hs.")
+            XCTAssertEqual(self.view.title, "Arrow")
         })
         
         wait(for: [expectation], timeout: TestConstants.timeout)

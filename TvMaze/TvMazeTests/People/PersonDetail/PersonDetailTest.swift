@@ -40,7 +40,7 @@ class PersonDetailTest: XCTestCase {
         //assert
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
-            XCTAssertTrue(self.view.shows.count == 1)
+            XCTAssertEqual(self.view.shows.count, 1)
         })
         
         wait(for: [expectation], timeout: TestConstants.timeout)
@@ -48,7 +48,7 @@ class PersonDetailTest: XCTestCase {
     
     func testTappingShowCell() {
         //arrange
-        let expectation = XCTestExpectation(description: "Show detail should be pushed")
+        let expectation = XCTestExpectation(description: "Show detail is pushed")
         let navigationController = MockNavigationController(rootViewController: view)
         
         //act

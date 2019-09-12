@@ -31,7 +31,7 @@ class PeopleListTest: XCTestCase {
     
     func testPeopleSearchCount() {
         //arrange
-        let expectation = XCTestExpectation(description: "People count should be 1")
+        let expectation = XCTestExpectation(description: "People count is 1")
         
         //act
         view.loadViewIfNeeded()
@@ -40,7 +40,7 @@ class PeopleListTest: XCTestCase {
         //assert
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
-            XCTAssertTrue(self.view.people.count == 1)
+            XCTAssertEqual(self.view.people.count, 1)
         })
         
         wait(for: [expectation], timeout: TestConstants.timeout)
@@ -48,7 +48,7 @@ class PeopleListTest: XCTestCase {
     
     func testTappingPersonCell() {
         //arrange
-        let expectation = XCTestExpectation(description: "Person detail view should be pushed")
+        let expectation = XCTestExpectation(description: "Person detail view is pushed")
         let navigationController = MockNavigationController(rootViewController: view)
         
         //act

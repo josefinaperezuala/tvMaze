@@ -28,6 +28,8 @@ class ShowListTest: XCTestCase {
         interactor.presenter = presenter
         interactor.repository = ShowMockRepository()
         router.viewController = view
+        
+        view.loadViewIfNeeded()
     }
 
     func testShowsCount() {
@@ -35,12 +37,11 @@ class ShowListTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Shows count is 1")
         
         //act
-        view.loadViewIfNeeded()
 
         //assert
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay) {
             expectation.fulfill()
-            XCTAssert(self.view.shows.count == 1)
+            XCTAssertEqual(self.view.shows.count, 1)
         }
         
         wait(for: [expectation], timeout: TestConstants.timeout)
@@ -52,13 +53,12 @@ class ShowListTest: XCTestCase {
         let expectation = XCTestExpectation(description: "Shows count is 1")
         
         //act
-        view.loadViewIfNeeded()
         view.searchBar(view.searchBar, textDidChange: "")
         
         //assert
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
-            XCTAssert(self.view.shows.count == 1)
+            XCTAssertEqual(self.view.shows.count, 1)
         })
         
         wait(for: [expectation], timeout: TestConstants.timeout)
@@ -66,12 +66,10 @@ class ShowListTest: XCTestCase {
     
     func testTappingShowCell() {
         //arrange
-        let expectation = XCTestExpectation(description: "Show detail should be pushed")
+        let expectation = XCTestExpectation(description: "Show detail is pushed")
         let navigationController = MockNavigationController(rootViewController: view)
         
         //act
-        view.loadViewIfNeeded()
-        
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             self.view.tableView(self.view.showsTable, didSelectRowAt: IndexPath(row: 0, section: 0))
             
@@ -85,11 +83,9 @@ class ShowListTest: XCTestCase {
     
     func testPagination() {
         //arrange
-        let expectation = XCTestExpectation(description: "Shows count should increment when reaching the end of the table")
+        let expectation = XCTestExpectation(description: "Shows count increments when reaching the end of the table")
         
         //act
-        view.loadViewIfNeeded()
-        
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
            
             let showsInitialCount = self.view.shows.count
@@ -98,11 +94,20 @@ class ShowListTest: XCTestCase {
             DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute:{
                 //assert
                 expectation.fulfill()
-                XCTAssertTrue(showsInitialCount < self.view.shows.count)
+                XCTAssertLessThan(showsInitialCount, self.view.shows.count)
             })
         })
         
         wait(for: [expectation], timeout: TestConstants.timeout)
+    }
+    
+    func testShowCellInfo() {
+        //arrange
+        let expectation = XCTestExpectation(description: "")
+        
+        //act
+        
+        //assert
     }
 }
 
