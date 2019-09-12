@@ -22,6 +22,7 @@ class ShowDetailTest: XCTestCase {
         presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
+        presenter.show = ShowMockRepository().createShow()
         
         view.presenter = presenter
         interactor.presenter = presenter
@@ -32,7 +33,6 @@ class ShowDetailTest: XCTestCase {
     func testEpisodesCount() {
         //arrange
         let expectacion = XCTestExpectation(description: "Episodes count should be 1")
-        presenter.show = ShowMockRepository().createShow()
             
         //act
         view.loadViewIfNeeded()
@@ -44,6 +44,23 @@ class ShowDetailTest: XCTestCase {
         })
         
         wait(for: [expectacion], timeout: 5)
+    }
+    
+    func testTextFormat() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Genres and schedule should be formatted properly")
+        
+        //act
+        view.loadViewIfNeeded()
+        
+        //assert
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            expectation.fulfill()
+            XCTAssertTrue(self.view.genresLbl.text == "Action | Crime | Science-Fiction")
+            XCTAssertTrue(self.view.scheduleLbl.text == "Monday, Tuesday at 22:00 hs.")
+        })
+        
+        wait(for: [expectation], timeout: 5)
     }
 }
 

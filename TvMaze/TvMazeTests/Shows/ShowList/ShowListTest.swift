@@ -131,7 +131,7 @@ class ShowMockRepository: ShowsRepositoryProtocol {
     }
     
     func createShow() -> Show {
-        return Show(id: 1, url: "", name: "", genres: [""], schedule: Schedule(time: "", days: [""]), image: Image(medium: "", original: ""))
+        return Show(id: 1, url: "", name: "", genres: ["Action", "Crime", "Science-Fiction"], schedule: Schedule(time: "22:00", days: ["Monday", "Tuesday"]), image: Image(medium: "", original: ""))
     }
     
     func createShowSearchService() -> ShowSearchService {
