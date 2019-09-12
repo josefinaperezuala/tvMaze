@@ -111,6 +111,7 @@ class ShowListTest: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
             guard let showCell = self.view.showsTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? ShowCell else {
+                XCTFail()
                 return
             }
             

@@ -49,19 +49,13 @@ class ShowDetailTest: XCTestCase {
     
     func testTextFormat() {
         //arrange
-        let expectation = XCTestExpectation(description: "Genres and schedule is formatted properly")
-        
+       
         //act
         
         //assert
-        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
-            expectation.fulfill()
-            XCTAssertEqual(self.view.genresLbl.text, "Action | Crime | Science-Fiction")
-            XCTAssertEqual(self.view.scheduleLbl.text, "Monday, Tuesday at 22:00 hs.")
-            XCTAssertEqual(self.view.title, "Arrow")
-        })
-        
-        wait(for: [expectation], timeout: TestConstants.timeout)
+        XCTAssertEqual(self.view.genresLbl.text, "Action | Crime | Science-Fiction")
+        XCTAssertEqual(self.view.scheduleLbl.text, "Monday, Tuesday at 22:00 hs.")
+        XCTAssertEqual(self.view.title, "Arrow")
     }
     
     func testEpisodeCellInfo() {
@@ -74,6 +68,7 @@ class ShowDetailTest: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
             guard let episodeCell = self.view.episodesTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? EpisodeCell else {
+                XCTFail()
                 return
             }
             
