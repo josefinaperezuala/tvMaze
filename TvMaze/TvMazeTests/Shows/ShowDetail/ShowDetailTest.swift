@@ -38,12 +38,12 @@ class ShowDetailTest: XCTestCase {
         view.loadViewIfNeeded()
         
         //assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectacion.fulfill()
             XCTAssertTrue(self.view.episodes.count == 1)
         })
         
-        wait(for: [expectacion], timeout: 5)
+        wait(for: [expectacion], timeout: TestConstants.timeout)
     }
     
     func testTextFormat() {
@@ -54,14 +54,14 @@ class ShowDetailTest: XCTestCase {
         view.loadViewIfNeeded()
         
         //assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
             XCTAssertTrue(self.view.genresLbl.text == "Action | Crime | Science-Fiction")
             XCTAssertTrue(self.view.scheduleLbl.text == "Monday, Tuesday at 22:00 hs.")
             XCTAssertTrue(self.view.title == "Arrow")
         })
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
     }
 }
 

@@ -38,12 +38,12 @@ class ShowListTest: XCTestCase {
         view.loadViewIfNeeded()
 
         //assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay) {
             expectation.fulfill()
             XCTAssert(self.view.shows.count == 1)
         }
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
         
     }
     
@@ -56,12 +56,12 @@ class ShowListTest: XCTestCase {
         view.searchBar(view.searchBar, textDidChange: "")
         
         //assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
             XCTAssert(self.view.shows.count == 1)
         })
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
     }
     
     func testTappingShowCell() {
@@ -72,7 +72,7 @@ class ShowListTest: XCTestCase {
         //act
         view.loadViewIfNeeded()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             self.view.tableView(self.view.showsTable, didSelectRowAt: IndexPath(row: 0, section: 0))
             
             //assert
@@ -80,7 +80,7 @@ class ShowListTest: XCTestCase {
             XCTAssertTrue(navigationController.pushedViewController is ShowDetailView)
         })
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
     }
     
     func testPagination() {
@@ -90,19 +90,19 @@ class ShowListTest: XCTestCase {
         //act
         view.loadViewIfNeeded()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
            
             let showsInitialCount = self.view.shows.count
             self.view.tableView(self.view.showsTable, willDisplay: ShowCell(), forRowAt: IndexPath(row: showsInitialCount - 1, section: 0))
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute:{
+            DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute:{
                 //assert
                 expectation.fulfill()
                 XCTAssertTrue(showsInitialCount < self.view.shows.count)
             })
         })
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
     }
 }
 
@@ -136,15 +136,5 @@ class ShowMockRepository: ShowsRepositoryProtocol {
     
     func createShowSearchService() -> ShowSearchService {
         return ShowSearchService(show: createShow())
-    }
-}
-
-class MockNavigationController: UINavigationController {
-    
-    var pushedViewController: UIViewController?
-    
-    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        pushedViewController = viewController
-        super.pushViewController(viewController, animated: animated)
     }
 }

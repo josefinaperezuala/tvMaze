@@ -38,12 +38,32 @@ class PeopleListTest: XCTestCase {
         view.searchBar(view.searchBar, textDidChange: "")
         
         //assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
             expectation.fulfill()
             XCTAssertTrue(self.view.people.count == 1)
         })
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
+    }
+    
+    func testTappingPersonCell() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Person detail view should be pushed")
+        let navigationController = MockNavigationController(rootViewController: view)
+        
+        //act
+        view.loadViewIfNeeded()
+        view.searchBar(view.searchBar, textDidChange: "")
+        
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+            self.view.tableView(self.view.peopleTable, didSelectRowAt: IndexPath(row: 0, section: 0))
+            
+            //assert
+            expectation.fulfill()
+            XCTAssertTrue(navigationController.pushedViewController is PersonDetailView)
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
     }
 }
 
