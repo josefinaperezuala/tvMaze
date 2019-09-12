@@ -13,6 +13,7 @@
 		D90B2DB9232ABB80004BD2A4 /* PeopleListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B2DB8232ABB80004BD2A4 /* PeopleListTest.swift */; };
 		D90B2DBC232ABF69004BD2A4 /* MockNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B2DBB232ABF69004BD2A4 /* MockNavigationController.swift */; };
 		D90B2DBE232ABFE3004BD2A4 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B2DBD232ABFE3004BD2A4 /* TestConstants.swift */; };
+		D90B2DC1232AC287004BD2A4 /* PersonDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B2DC0232AC287004BD2A4 /* PersonDetailTest.swift */; };
 		D99DCAA323282158002EB820 /* PeopleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9523282158002EB820 /* PeopleListPresenter.swift */; };
 		D99DCAA423282158002EB820 /* PeopleListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9623282158002EB820 /* PeopleListProtocols.swift */; };
 		D99DCAA523282158002EB820 /* PeopleListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DCA9823282158002EB820 /* PeopleListView.xib */; };
@@ -93,6 +94,7 @@
 		D90B2DB8232ABB80004BD2A4 /* PeopleListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListTest.swift; sourceTree = "<group>"; };
 		D90B2DBB232ABF69004BD2A4 /* MockNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNavigationController.swift; sourceTree = "<group>"; };
 		D90B2DBD232ABFE3004BD2A4 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
+		D90B2DC0232AC287004BD2A4 /* PersonDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailTest.swift; sourceTree = "<group>"; };
 		D99DCA9523282158002EB820 /* PeopleListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListPresenter.swift; sourceTree = "<group>"; };
 		D99DCA9623282158002EB820 /* PeopleListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListProtocols.swift; sourceTree = "<group>"; };
 		D99DCA9823282158002EB820 /* PeopleListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleListView.xib; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 		D90B2DB6232ABB66004BD2A4 /* People */ = {
 			isa = PBXGroup;
 			children = (
+				D90B2DBF232AC276004BD2A4 /* PersonDetail */,
 				D90B2DB7232ABB6C004BD2A4 /* PeopleList */,
 			);
 			path = People;
@@ -235,6 +238,14 @@
 				D90B2DBD232ABFE3004BD2A4 /* TestConstants.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		D90B2DBF232AC276004BD2A4 /* PersonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D90B2DC0232AC287004BD2A4 /* PersonDetailTest.swift */,
+			);
+			path = PersonDetail;
 			sourceTree = "<group>";
 		};
 		D99DCA2D232816FE002EB820 /* People */ = {
@@ -805,6 +816,7 @@
 				D90B2DBE232ABFE3004BD2A4 /* TestConstants.swift in Sources */,
 				D90B2DB5232AA7AB004BD2A4 /* ShowDetailTest.swift in Sources */,
 				D90B2DBC232ABF69004BD2A4 /* MockNavigationController.swift in Sources */,
+				D90B2DC1232AC287004BD2A4 /* PersonDetailTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,7 @@ class PersonDetailView: UIViewController, PersonDetailViewProtocol {
     
     var presenter: PersonDetailPresenterProtocol?
     
-    private var shows: [ShowPresentable] = []
+    var shows: [ShowPresentable] = []
 
 	override func viewDidLoad() {
         super.viewDidLoad()

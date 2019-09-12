@@ -22,10 +22,10 @@ class PeopleListTest: XCTestCase {
         presenter.view = view
         presenter.router = router
         presenter.interactor = interactor
-        
+    
         view.presenter = presenter
         interactor.presenter = presenter
-        interactor.repository = PeopleMockRepository()
+        interactor.repository = PeopleListMockRepository()
         router.viewController = view
     }
     
@@ -67,7 +67,7 @@ class PeopleListTest: XCTestCase {
     }
 }
 
-class PeopleMockRepository: PeopleListRepositoryProtocol {
+class PeopleListMockRepository: PeopleListRepositoryProtocol {
     
     func search(name: String) -> Promise<[PersonSearchService]> {
         return Promise.value([createPersonSearchService()])
