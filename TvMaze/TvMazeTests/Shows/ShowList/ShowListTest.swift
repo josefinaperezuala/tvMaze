@@ -26,15 +26,13 @@ class ShowListTest: XCTestCase {
         view.presenter = presenter
         view.title = "Shows"
         interactor.presenter = presenter
+        interactor.repository = ShowMockRepository()
         router.viewController = view
-
-        interactor.repository = ShowsRepository()
     }
 
     func testShowsCount() {
         //arrange
         let expectation = XCTestExpectation(description: "Shows count is 1")
-        interactor.repository = ShowMockRepository()
         
         //act
         view.loadViewIfNeeded()
@@ -52,7 +50,6 @@ class ShowListTest: XCTestCase {
     func testShowsSearchCount() {
         //arrange
         let expectation = XCTestExpectation(description: "Shows count is 1")
-        interactor.repository = ShowMockRepository()
         
         //act
         view.loadViewIfNeeded()
@@ -62,6 +59,25 @@ class ShowListTest: XCTestCase {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             expectation.fulfill()
             XCTAssert(self.view.shows.count == 1)
+        })
+        
+        wait(for: [expectation], timeout: 5)
+    }
+    
+    func testTappingShowCell() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Show detail should be pushed")
+        let navigationController = MockNavigationController(rootViewController: view)
+        
+        //act
+        view.loadViewIfNeeded()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            self.view.tableView(self.view.showsTable, didSelectRowAt: IndexPath(row: 0, section: 0))
+            
+            //assert
+            expectation.fulfill()
+            XCTAssertTrue(navigationController.pushedViewController is ShowDetailView)
         })
         
         wait(for: [expectation], timeout: 5)
@@ -99,5 +115,14 @@ class ShowMockRepository: ShowsRepositoryProtocol {
     func createShowSearchService() -> ShowSearchService {
         return ShowSearchService(show: createShow())
     }
+}
 
+class MockNavigationController: UINavigationController {
+    
+    var pushedViewController: UIViewController?
+    
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        pushedViewController = viewController
+        super.pushViewController(viewController, animated: animated)
+    }
 }
