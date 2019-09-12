@@ -103,7 +103,7 @@ class ShowListTest: XCTestCase {
     
     func testShowCellInfo() {
         //arrange
-        let expectation = XCTestExpectation(description: "")
+        let expectation = XCTestExpectation(description: "Name should be Arrow")
         
         //act
         

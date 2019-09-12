@@ -63,6 +63,25 @@ class ShowDetailTest: XCTestCase {
         
         wait(for: [expectation], timeout: TestConstants.timeout)
     }
+    
+    func testEpisodeCellInfo() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Text should be 1x1 - Pilot")
+        
+        //act
+        
+        //assert
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+            expectation.fulfill()
+            guard let episodeCell = self.view.episodesTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? EpisodeCell else {
+                return
+            }
+            
+            XCTAssertEqual(episodeCell.nameLbl.text, "1x1 - Pilot")
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
+    }
 }
 
 class ShowDetailMockRepository: ShowDetailRepositoryProtocol {
@@ -72,6 +91,6 @@ class ShowDetailMockRepository: ShowDetailRepositoryProtocol {
     }
     
     func createEpisode() -> Episode {
-        return Episode(id: 1, url: "", name: "", season: 1, number: 1, airdate: "", airtime: "", airstamp: "", runtime: 1, image: Image(medium: "", original: ""), summary: "")
+        return Episode(id: 1, url: "", name: "Pilot", season: 1, number: 1, airdate: "", airtime: "", airstamp: "", runtime: 1, image: Image(medium: "", original: ""), summary: "")
     }
 }
