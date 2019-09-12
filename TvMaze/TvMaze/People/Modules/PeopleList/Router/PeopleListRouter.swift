@@ -5,10 +5,7 @@ class PeopleListRouter: PeopleListRouterProtocol {
     weak var viewController: UIViewController?
     
     func showDetail(person: Person) {
-        guard let detailController = PersonDetailModule.build(person: person) as? PersonDetailView else {
-            return
-        }
-        
+        let detailController = PersonDetailModule.build(person: person)
         viewController?.navigationController?.pushViewController(detailController, animated: true)
     }
 
