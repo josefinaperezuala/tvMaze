@@ -30,6 +30,19 @@ class Person: Decodable {
     var gender: String?
     var image: Image?
     
+    init(id: Int,
+         url: String,
+         name: String,
+         birthday: String?,
+         image: Image?) {
+        
+        self.id = id
+        self.url = url
+        self.name = name
+        self.birthday = birthday
+        self.image = image
+    }
+    
     init(from service: PersonSearchService) {
         self.id = service.person.id
         self.url = service.person.url

@@ -10,6 +10,7 @@
 		39F7DC64E1CC9C99F71469BD /* libPods-TvMaze.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D99DDD3E23219C9B005F049D /* libPods-TvMaze.a */; };
 		43B76D65E54889AA17172762 /* libPods-TvMazeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F21481784AB759F6A05030E0 /* libPods-TvMazeTests.a */; };
 		D90B2DB5232AA7AB004BD2A4 /* ShowDetailTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B2DB4232AA7AB004BD2A4 /* ShowDetailTest.swift */; };
+		D90B2DB9232ABB80004BD2A4 /* PeopleListTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90B2DB8232ABB80004BD2A4 /* PeopleListTest.swift */; };
 		D99DCAA323282158002EB820 /* PeopleListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9523282158002EB820 /* PeopleListPresenter.swift */; };
 		D99DCAA423282158002EB820 /* PeopleListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99DCA9623282158002EB820 /* PeopleListProtocols.swift */; };
 		D99DCAA523282158002EB820 /* PeopleListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99DCA9823282158002EB820 /* PeopleListView.xib */; };
@@ -87,6 +88,7 @@
 		39A77E6C40431FED63343F37 /* Pods-TvMaze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMaze.debug.xcconfig"; path = "Target Support Files/Pods-TvMaze/Pods-TvMaze.debug.xcconfig"; sourceTree = "<group>"; };
 		A23C1B6FD38A3A1A355D2750 /* Pods-TvMazeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TvMazeTests.release.xcconfig"; path = "Target Support Files/Pods-TvMazeTests/Pods-TvMazeTests.release.xcconfig"; sourceTree = "<group>"; };
 		D90B2DB4232AA7AB004BD2A4 /* ShowDetailTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowDetailTest.swift; sourceTree = "<group>"; };
+		D90B2DB8232ABB80004BD2A4 /* PeopleListTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleListTest.swift; sourceTree = "<group>"; };
 		D99DCA9523282158002EB820 /* PeopleListPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListPresenter.swift; sourceTree = "<group>"; };
 		D99DCA9623282158002EB820 /* PeopleListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleListProtocols.swift; sourceTree = "<group>"; };
 		D99DCA9823282158002EB820 /* PeopleListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleListView.xib; sourceTree = "<group>"; };
@@ -204,6 +206,22 @@
 				D90B2DB4232AA7AB004BD2A4 /* ShowDetailTest.swift */,
 			);
 			path = ShowDetail;
+			sourceTree = "<group>";
+		};
+		D90B2DB6232ABB66004BD2A4 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				D90B2DB7232ABB6C004BD2A4 /* PeopleList */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		D90B2DB7232ABB6C004BD2A4 /* PeopleList */ = {
+			isa = PBXGroup;
+			children = (
+				D90B2DB8232ABB80004BD2A4 /* PeopleListTest.swift */,
+			);
+			path = PeopleList;
 			sourceTree = "<group>";
 		};
 		D99DCA2D232816FE002EB820 /* People */ = {
@@ -378,6 +396,7 @@
 		D99DDD23232156AB005F049D /* TvMazeTests */ = {
 			isa = PBXGroup;
 			children = (
+				D90B2DB6232ABB66004BD2A4 /* People */,
 				D99DDD3823219002005F049D /* Shows */,
 				D99DDD26232156AB005F049D /* Info.plist */,
 			);
@@ -767,6 +786,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D90B2DB9232ABB80004BD2A4 /* PeopleListTest.swift in Sources */,
 				D99DDD3D2321991E005F049D /* ShowListTest.swift in Sources */,
 				D90B2DB5232AA7AB004BD2A4 /* ShowDetailTest.swift in Sources */,
 			);

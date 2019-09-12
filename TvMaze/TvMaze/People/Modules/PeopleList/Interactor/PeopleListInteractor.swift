@@ -4,7 +4,7 @@ class PeopleListInteractor: PeopleListInteractorProtocol {
 
     weak var presenter: PeopleListPresenterProtocol?
     
-    var repository: PeopleListRepository = PeopleListRepository()
+    var repository: PeopleListRepositoryProtocol = PeopleListRepository()
     
     func searchPeople(search: String) {
         repository.search(name: search).done { people in

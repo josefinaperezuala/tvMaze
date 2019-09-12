@@ -58,6 +58,7 @@ class ShowDetailTest: XCTestCase {
             expectation.fulfill()
             XCTAssertTrue(self.view.genresLbl.text == "Action | Crime | Science-Fiction")
             XCTAssertTrue(self.view.scheduleLbl.text == "Monday, Tuesday at 22:00 hs.")
+            XCTAssertTrue(self.view.title == "Arrow")
         })
         
         wait(for: [expectation], timeout: 5)
