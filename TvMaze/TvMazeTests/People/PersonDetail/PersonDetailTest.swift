@@ -45,6 +45,23 @@ class PersonDetailTest: XCTestCase {
         
         wait(for: [expectation], timeout: TestConstants.timeout)
     }
+    
+    func testTappingShowCell() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Show detail should be pushed")
+        let navigationController = MockNavigationController(rootViewController: view)
+        
+        //act
+        view.loadViewIfNeeded()
+        
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+            expectation.fulfill()
+            self.view.tableView(self.view.showsTable, didSelectRowAt: IndexPath(row: 0, section: 0))
+            XCTAssertTrue(navigationController.pushedViewController is ShowDetailView)
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
+    }
 }
 
 class PersonDetailMockRepository: PersonDetailRepositoryProtocol {
