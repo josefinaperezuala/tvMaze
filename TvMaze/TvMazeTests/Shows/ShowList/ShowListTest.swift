@@ -33,8 +33,8 @@ class ShowListTest: XCTestCase {
 
     func testShowsCount() {
         //arrange
-        let expectation = XCTestExpectation(description: "")
-        interactor.repository = ShowMock()
+        let expectation = XCTestExpectation(description: "Shows count is 1")
+        interactor.repository = ShowMockRepository()
         
         //act
         view.loadViewIfNeeded()
@@ -48,9 +48,27 @@ class ShowListTest: XCTestCase {
         wait(for: [expectation], timeout: 5)
         
     }
+    
+    func testShowsSearchCount() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Shows count is 1")
+        interactor.repository = ShowMockRepository()
+        
+        //act
+        view.loadViewIfNeeded()
+        view.searchBar(view.searchBar, textDidChange: "")
+        
+        //assert
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+            expectation.fulfill()
+            XCTAssert(self.view.shows.count == 1)
+        })
+        
+        wait(for: [expectation], timeout: 5)
+    }
 }
 
-class ShowMock: ShowsRepositoryProtocol {
+class ShowMockRepository: ShowsRepositoryProtocol {
     
     func getShow(id: Int) -> Promise<Show> {
         return Promise.value(
@@ -64,22 +82,22 @@ class ShowMock: ShowsRepositoryProtocol {
             ])
     }
     
-    func search(name: String) -> Promise<[Show]> {
-        return Promise.value([
-            createShow()
-            ])
-    }
-    
-
     func getShows() -> Promise<[Show]> {
         return Promise.value([
             createShow()
             ])
     }
     
+    func search(name: String) -> Promise<[ShowSearchService]> {
+        return Promise.value([createShowSearchService()])
+    }
+    
     func createShow() -> Show {
-        return Show(id: 1, url: "", name: "", type: "", language: "", genres: [""], status: "", runtime: 9, premiered: "", officialSite: "", schedule: Schedule(time: "", days: [""]), rating: Rating(average: 10), weight: 4, network: Network(id: 1, name: "", country: Country(name: "", code: "", timezone: "")), webChannel: WebChannel(id: 2, name: "", country: Country(name: "", code: "", timezone: "")), externals: Externals(tvrage: 3, thetvdb: 4, imdb: ""), image: Image(medium: "", original: ""), summary: "", updated: 2, links: Links(show: "", previousEpisode: ""))
-
+        return Show(id: 1, url: "", name: "", genres: [""], schedule: Schedule(time: "", days: [""]), image: Image(medium: "", original: ""))
+    }
+    
+    func createShowSearchService() -> ShowSearchService {
+        return ShowSearchService(show: createShow())
     }
 
 }
