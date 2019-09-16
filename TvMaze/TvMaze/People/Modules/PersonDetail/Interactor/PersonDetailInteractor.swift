@@ -4,7 +4,7 @@ class PersonDetailInteractor: PersonDetailInteractorProtocol {
 
     weak var presenter: PersonDetailPresenterProtocol?
     
-    private var repository: PersonDetailRepository = PersonDetailRepository()
+    var repository: PersonDetailRepositoryProtocol = PersonDetailRepository()
     
     func getCastCredits(personId: Int) {
         repository.shows(personId: personId).done { shows in

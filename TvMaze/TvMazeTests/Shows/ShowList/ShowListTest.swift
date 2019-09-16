@@ -26,31 +26,103 @@ class ShowListTest: XCTestCase {
         view.presenter = presenter
         view.title = "Shows"
         interactor.presenter = presenter
+        interactor.repository = ShowMockRepository()
         router.viewController = view
-
-        interactor.repository = ShowsRepository()
+        
+        view.loadViewIfNeeded()
     }
 
     func testShowsCount() {
         //arrange
-        let expectation = XCTestExpectation(description: "")
-        interactor.repository = ShowMock()
+        let expectation = XCTestExpectation(description: "Shows count is 1")
         
         //act
-        view.loadViewIfNeeded()
 
         //assert
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay) {
             expectation.fulfill()
-            XCTAssert(self.view.shows.count == 1)
+            XCTAssertEqual(self.view.shows.count, 1)
         }
         
-        wait(for: [expectation], timeout: 5)
+        wait(for: [expectation], timeout: TestConstants.timeout)
         
+    }
+    
+    func testShowsSearchCount() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Shows count is 1")
+        
+        //act
+        view.searchBar(view.searchBar, textDidChange: "")
+        
+        //assert
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+            expectation.fulfill()
+            XCTAssertEqual(self.view.shows.count, 1)
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
+    }
+    
+    func testTappingShowCell() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Show detail is pushed")
+        let navigationController = MockNavigationController(rootViewController: view)
+        
+        //act
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+            self.view.tableView(self.view.showsTable, didSelectRowAt: IndexPath(row: 0, section: 0))
+            
+            //assert
+            expectation.fulfill()
+            XCTAssertTrue(navigationController.pushedViewController is ShowDetailView)
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
+    }
+    
+    func testPagination() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Shows count increments when reaching the end of the table")
+        
+        //act
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+           
+            let showsInitialCount = self.view.shows.count
+            self.view.tableView(self.view.showsTable, willDisplay: ShowCell(), forRowAt: IndexPath(row: showsInitialCount - 1, section: 0))
+            
+            DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute:{
+                //assert
+                expectation.fulfill()
+                XCTAssertLessThan(showsInitialCount, self.view.shows.count)
+            })
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
+    }
+    
+    func testShowCellInfo() {
+        //arrange
+        let expectation = XCTestExpectation(description: "Name should be Arrow")
+        
+        //act
+        
+        //assert
+        DispatchQueue.main.asyncAfter(deadline: TestConstants.delay, execute: {
+            expectation.fulfill()
+            guard let showCell = self.view.showsTable.cellForRow(at: IndexPath(row: 0, section: 0)) as? ShowCell else {
+                XCTFail()
+                return
+            }
+            
+            XCTAssertEqual(showCell.nameLbl.text, "Arrow")
+        })
+        
+        wait(for: [expectation], timeout: TestConstants.timeout)
     }
 }
 
-class ShowMock: ShowsRepositoryProtocol {
+class ShowMockRepository: ShowsRepositoryProtocol {
     
     func getShow(id: Int) -> Promise<Show> {
         return Promise.value(
@@ -64,22 +136,21 @@ class ShowMock: ShowsRepositoryProtocol {
             ])
     }
     
-    func search(name: String) -> Promise<[Show]> {
-        return Promise.value([
-            createShow()
-            ])
-    }
-    
-
     func getShows() -> Promise<[Show]> {
         return Promise.value([
             createShow()
             ])
     }
     
-    func createShow() -> Show {
-        return Show(id: 1, url: "", name: "", type: "", language: "", genres: [""], status: "", runtime: 9, premiered: "", officialSite: "", schedule: Schedule(time: "", days: [""]), rating: Rating(average: 10), weight: 4, network: Network(id: 1, name: "", country: Country(name: "", code: "", timezone: "")), webChannel: WebChannel(id: 2, name: "", country: Country(name: "", code: "", timezone: "")), externals: Externals(tvrage: 3, thetvdb: 4, imdb: ""), image: Image(medium: "", original: ""), summary: "", updated: 2, links: Links(show: "", previousEpisode: ""))
-
+    func search(name: String) -> Promise<[ShowSearchService]> {
+        return Promise.value([createShowSearchService()])
     }
-
+    
+    func createShow() -> Show {
+        return Show(id: 1, url: "", name: "Arrow", genres: ["Action", "Crime", "Science-Fiction"], schedule: Schedule(time: "22:00", days: ["Monday", "Tuesday"]), image: Image(medium: "", original: ""))
+    }
+    
+    func createShowSearchService() -> ShowSearchService {
+        return ShowSearchService(show: createShow())
+    }
 }

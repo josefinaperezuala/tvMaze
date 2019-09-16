@@ -6,7 +6,7 @@ class PeopleListPresenter: PeopleListPresenterProtocol {
     var interactor: PeopleListInteractorProtocol?
     var router: PeopleListRouterProtocol?
     
-    private var people: [Person] = []
+    var people: [Person] = []
     
     func searchDidChange(search: String) {
         interactor?.searchPeople(search: search)
